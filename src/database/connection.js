@@ -6,7 +6,7 @@ function execSQLQuery(sqlQry, res){
       port     : '',
       user     : 'root',
       password : '',
-      database : 'todo'
+      database : 'ProjetoUpGames'
     })
    
     connection.query(sqlQry, function(error, results, fields){

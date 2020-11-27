@@ -1,10 +1,10 @@
 const express = require('express')
-const ClienteController = require('../controllers/ClienteController')
+const UsuarioController = require('../controllers/UsuarioController')
 const router = express.Router()
 
-router.get('/getCliente/:id?', ClienteController.getCliente)
-router.delete('/deleteCliente/:id', ClienteController.deleteCliente)
-router.post('/postCliente', ClienteController.postCliente)
-router.put('/putCliente', ClienteController.putCliente)
+router.get('/getUsuario/:Cod_SeqUsuario?', UsuarioController.getUsuario)
+router.delete('/deleteUsuario/:Cod_SeqUsuario', UsuarioController.deleteUsuario)
+router.post('/postUsuario', UsuarioController.postUsuario)
+router.put('/putUsuario', UsuarioController.putUsuario)
 
 module.exports = router
