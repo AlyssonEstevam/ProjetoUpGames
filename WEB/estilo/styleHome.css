@@ -1,0 +1,38 @@
+.itens-menu{
+    font-size: 15pt;
+    display: flex;
+}
+
+.imagens-carousel{
+    width: 80%;
+    height: 500px; 
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.primeira-home{
+    width: 100%;
+    display: flex;
+}
+
+.imagens-home{
+    width: 50%;
+    height: 450px;
+}
+
+body{
+    background-color: #1b1b1bfd
+}
+
+
+footer#rodape div.rodapefinal{
+    position: absolute;
+    margin-top: 3%;
+    color: white;
+    left: 43%;
+    font-family: times, sans-serif;
+}
+
+footer#rodape div.rodapefinal img{
+    margin-left: 41%;
+}

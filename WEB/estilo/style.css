@@ -1,0 +1,41 @@
+body{
+    background-color: #1b1b1bfd;
+}
+
+div.login img{
+    position: absolute;
+    left: 40%;
+    top: 20%;
+    width: 330px;
+}
+
+div.login p input#clogin{
+    position: absolute;
+    left: 42%;
+    top: 57%;
+    height: 3%;
+    font-size: 15pt;
+}
+
+div.login p input#csenha{
+    position: absolute;
+    left: 42%;
+    top: 62%;
+    height: 3%;
+    font-size: 15pt;
+}
+
+div.login p input#confirmar{
+    position: absolute;
+    left: 46.5%;
+    top: 67%;
+    height: 3%;
+    font-size: 15pt;
+}
+div.login p input#confirmar2{
+    position: absolute;
+    left: 44.5%;
+    top: 73%;
+    height: 3%;
+    font-size: 15pt;
+}

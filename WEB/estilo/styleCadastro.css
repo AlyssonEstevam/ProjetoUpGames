@@ -1,0 +1,71 @@
+body{
+    background-color: #1b1b1bfd;
+}
+
+div.login img{
+    position: absolute;
+    left: 40%;
+    top: 9%;
+    width: 15%;
+}
+
+div.login h1{
+    position: absolute;
+    left: 42.5%;
+    top: 42%;
+    color: white;
+}
+
+div.login p input#cnome{
+    position: absolute;
+    left: 31%;
+    top: 55%;
+    height: 25px;
+    font-size: 15pt;
+}
+
+div.login p input#csnome{
+    position: absolute;
+    left: 51%;
+    top: 55%;
+    height: 25px;
+    font-size: 15pt;
+}
+
+div.login p input#cemail{
+    position: absolute;
+    left: 31%;
+    top: 64%;
+    height: 25px;
+    font-size: 15pt;
+}
+
+div.login p input#clogin{
+    position: absolute;
+    left: 31%;
+    top: 73%;
+    height: 25px;
+    font-size: 15pt;
+}
+
+div.login p input#csenha{
+    position: absolute;
+    left: 51%;
+    top: 73%;
+    height: 25px;
+    font-size: 15pt;
+}
+
+div.login p input#confirmar{
+    position: absolute;
+    left: 43.5%;
+    top: 82%;
+    height: 30px;
+    font-size: 15pt;
+
+}
+
+div.login h1{
+    border: solid 2px white;
+    padding: 4px;
+} 
