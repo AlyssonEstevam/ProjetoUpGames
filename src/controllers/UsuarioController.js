@@ -31,7 +31,10 @@ class UsuarioController{
               Nom_Senha = req.body.Nom_Senha.substring(0,20),
               Cod_TipoUsuario = parseInt(req.body.Cod_TipoUsuario)
 
-        execSQLQuery(`UPDATE Up_Usuarios SET Nom_Nome='${Nom_Nome}', Nom_Login='${Nom_Login}', Nom_Senha='${Nom_Senha}', Cod_TipoUsuario='${Cod_TipoUsuario}'  
+        execSQLQuery(`UPDATE Up_Usuarios SET Nom_Nome='${Nom_Nome}', 
+                                         Nom_Login='${Nom_Login}', 
+                                         Nom_Senha='${Nom_Senha}', 
+                                         Cod_TipoUsuario='${Cod_TipoUsuario}'  
                         WHERE Cod_SeqUsuario=${Cod_SeqUsuario}`, res)
     }
 }
