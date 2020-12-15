@@ -10,6 +10,14 @@ class UsuarioController{
         execSQLQuery('SELECT * FROM Up_Usuarios' + filter, res)
     }
 
+    getUsuarioByLogin(req, res){
+        let filter = ''
+
+        filter = ' WHERE Nom_Login=\'' + req.params.Nom_Login.substring(0,30) + '\''
+
+        execSQLQuery('SELECT * FROM Up_Usuarios' + filter, res)
+    }
+
     deleteUsuario(req, res){
         execSQLQuery('DELETE FROM Up_Usuarios WHERE Cod_SeqUsuario=' + parseInt(req.params.Cod_SeqUsuario), res)
     }
