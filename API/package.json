@@ -1,7 +1,7 @@
 {
   "name": "nodemysql",
   "version": "1.0.0",
-  "description": "tutorial de node com mysql",
+  "description": "API para trabalho da faculdade",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js"

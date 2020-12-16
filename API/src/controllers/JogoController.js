@@ -7,11 +7,11 @@ class JogoController{
         if(req.params.Cod_SeqJogo) 
             filter = ' WHERE Cod_SeqJogo=' + parseInt(req.params.Cod_SeqJogo)
 
-        execSQLQuery('SELECT * FROM Up_Jogos' + filter, res)
+        execSQLQuery('SELECT * FROM Up_Jogo' + filter, res)
     }
 
     deleteJogo(req, res){
-        execSQLQuery('DELETE FROM Up_Jogos WHERE Cod_SeqJogo=' + parseInt(req.params.Cod_SeqJogo), res)
+        execSQLQuery('DELETE FROM Up_Jogo WHERE Cod_SeqJogo=' + parseInt(req.params.Cod_SeqJogo), res)
     }
 
     postJogo(req, res){
@@ -19,7 +19,7 @@ class JogoController{
               Cod_Genero = parseInt(req.body.Cod_Genero),
               Vlr_Preco = parseFloat(req.body.Vlr_Preco)
 
-        execSQLQuery(`INSERT INTO Up_Jogos(Nom_Nome, Cod_Genero, Vlr_Preco) 
+        execSQLQuery(`INSERT INTO Up_Jogo(Nom_Nome, Cod_Genero, Vlr_Preco) 
                         VALUES('${Nom_Nome}', '${Cod_Genero}', '${Vlr_Preco}')`, res)
     }
 
@@ -29,7 +29,7 @@ class JogoController{
               Cod_Genero = parseInt(req.body.Cod_Genero),
               Vlr_Preco = parseFloat(req.body.Vlr_Preco)
 
-        execSQLQuery(`UPDATE Up_Jogos SET Nom_Nome='${Nom_Nome}', 
+        execSQLQuery(`UPDATE Up_Jogo SET Nom_Nome='${Nom_Nome}', 
                                           Cod_Genero='${Cod_Genero}', 
                                           Vlr_Preco='${Vlr_Preco}'
                         WHERE Cod_SeqJogo=${Cod_SeqJogo}`, res)
