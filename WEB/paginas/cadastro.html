@@ -5,19 +5,19 @@
         <meta charset="UTF-8">
         <link rel="shortcut icon" href="../imagens/logo16.ico" />
         <link rel="stylesheet" type="text/css" href="../estilo/styleCadastro.css">
-        <script src="script.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="../js/scriptCadastro.js"></script>
     </head>
     <body>
         <div class="login">
             <img src="../imagens/login.png">
             <h1>CADASTRO</h1>
-                <p>
-                        <input type="text" id="cnome" name="txtNome" size="20" maxlength="15" placeholder="Primeiro Nome">
-                        <input type="text" id="cemail" name="txtNome" size="59" maxlength="50" placeholder="E-mail">
-                        <input type="text" id="clogin" name="txtNome" size="20" maxlength="15" placeholder="Login">
-                        <input type="password" id="csenha" name="txtNome" size="20" maxlength="15" placeholder="Senha">
-                        <a href="../index.html"><input type="submit" id="confirmar" value="CADASTRE-SE"></a>
-                </p>
+            <p>
+                <input type="text" id="cnome" name="txtNome" size="20" maxlength="15" placeholder="Nome Completo">
+                <input type="text" id="clogin" name="txtNome" size="20" maxlength="15" placeholder="Login">
+                <input type="password" id="csenha" name="txtNome" size="20" maxlength="15" placeholder="Senha">
+                <input type="submit" id="confirmar" value="CADASTRE-SE" onclick="realizaCadastro()">
+            </p>
         </div>
         
     </body>

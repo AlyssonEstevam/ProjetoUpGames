@@ -12,8 +12,10 @@ function btnLogin(){
     url: 'http://localhost:4000/getUsuarioByLogin/' + login,
     crossDomain: true
   }).done(function(data) {
-    if(!data.length)
+    if(!data.length){
       alert('Usuário não encontrado no sistema!')
+      return
+    }
 
     if(data[0].Nom_Senha == senha){
       window.location.href = 'paginas/home.html';
