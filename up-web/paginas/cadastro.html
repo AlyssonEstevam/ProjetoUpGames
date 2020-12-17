@@ -5,21 +5,32 @@
         <meta charset="UTF-8">
         <link rel="shortcut icon" href="../imagens/logo16.ico" />
         <link rel="stylesheet" type="text/css" href="../estilo/styleCadastro.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <script src="../js/scriptCadastro.js"></script>
     </head>
     <body>
-        <div class="login">
-            <img src="../imagens/login.png">
-            <h1>CADASTRO</h1>
-            <p>
-                <input type="text" id="cnome" name="txtNome" size="20" maxlength="15" placeholder="Nome Completo">
-                <input type="text" id="clogin" name="txtNome" size="20" maxlength="15" placeholder="Login">
-                <input type="password" id="csenha" name="txtNome" size="20" maxlength="15" placeholder="Senha">
-                <input type="submit" id="confirmar" value="CADASTRE-SE" onclick="realizaCadastro()">
-            </p>
+        <div class="container">
+            <div class="divLogo">
+                <img id="imgLogo" class="img-fluid" src="../imagens/logo.png">
+            </div>
+            <div class="divFormulario">
+                <input type="text" id="cnome" placeholder="NOME COMPLETO" onfocus="limpaPlaceHolder(this);" onblur="adicionaPlaceHolder(this);">
+                <input type="text" id="clogin" placeholder="LOGIN" onfocus="limpaPlaceHolder(this);" onblur="adicionaPlaceHolder(this);">
+                <input type="password" id="csenha" placeholder="SENHA" onfocus="limpaPlaceHolder(this);" onblur="adicionaPlaceHolder(this);">
+                <input type="password" id="cconfirmasenha" placeholder="CONFIRME A SENHA" onfocus="limpaPlaceHolder(this);" onblur="adicionaPlaceHolder(this);">
+            </div>
+            <div class="divBotoes">
+                <div class="divBtnCadastra">
+                    <input type="button" id="btnCadastro" value="CADASTRAR" onclick="realizaCadastro();">
+                    <input type="button" id="btnLimpar" value="LIMPAR" onclick="limparCampos();">
+                </div>
+                <div class="divBtnVoltar">
+                    <input type="button" id="btnVoltar" value="VOLTAR" onclick="abreTelaLogin();">
+                </div>
+            </div>
         </div>
-        
     </body>
     
 </html>

@@ -4,23 +4,26 @@
         <title>UPgames</title>
         <meta charset="UTF-8">
         <link rel="shortcut icon" href="imagens/logo16.ico" />
-        <link rel="stylesheet" type="text/css" href="estilo/style.css">
+        <link rel="stylesheet" type="text/css" href="estilo/styleLogin.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <script src="js/scriptLogin.js"></script>
     </head>
     <body>
-        <div class="login">
-            <img src="imagens/login.png">
-            <p>
-                <input type="text" id="clogin" name="txtNome" size="20" maxlength="15" placeholder="LOGIN">
-                <input type="password" id="csenha" name="txtNome" size="20" maxlength="15" placeholder="SENHA">
-                <input type="submit" id="confirmar" value="LOGIN" onclick="btnLogin();">
-                <a href="paginas/cadastro.html"><input type="submit" id="btnCadastro" value="CADASTRE-SE"></a>
-            </p>
+        <div class="container">
+            <div class="divLogo">
+                <img id="imgLogo" class="img-fluid" src="imagens/logo.png">
+            </div>
+            <div class="divFormulario">
+                <input type="text" id="clogin" placeholder="LOGIN" onfocus="limpaPlaceHolder(this);" onblur="adicionaPlaceHolder(this);">
+                <input type="password" id="csenha" placeholder="SENHA" onfocus="limpaPlaceHolder(this);" onblur="adicionaPlaceHolder(this);">
+            </div>
+            <div class="divBotoes">
+                <input type="button" id="btnLogin" value="LOGIN" onclick="realizaLogin();">
+                <input type="button" id="btnCadastro" value="CADASTRO" onclick="abreTelaCadastro();">
+            </div>
         </div>
-        
     </body>
     
 </html>
