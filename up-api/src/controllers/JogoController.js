@@ -2,12 +2,12 @@ const execSQLQuery = require('../database/connection')
 
 class JogoController{
     getJogo(req, res){
-        let filter = ''
+        let filtro = ''
 
         if(req.params.Cod_SeqJogo) 
-            filter = ' WHERE Cod_SeqJogo=' + parseInt(req.params.Cod_SeqJogo)
+            filtro = ' WHERE Cod_SeqJogo=' + parseInt(req.params.Cod_SeqJogo)
 
-        execSQLQuery('SELECT * FROM Up_Jogo' + filter, res)
+        execSQLQuery('SELECT * FROM Up_Jogo' + filtro, res)
     }
 
     deleteJogo(req, res){

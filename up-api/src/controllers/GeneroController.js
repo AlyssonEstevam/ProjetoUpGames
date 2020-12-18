@@ -2,12 +2,12 @@ const execSQLQuery = require('../database/connection')
 
 class GeneroController{
     getGenero(req, res){
-        let filter = ''
+        let filtro = ''
 
         if(req.params.Cod_SeqGenero) 
-            filter = ' WHERE Cod_SeqGenero=' + parseInt(req.params.Cod_SeqGenero)
+            filtro = ' WHERE Cod_SeqGenero=' + parseInt(req.params.Cod_SeqGenero)
 
-        execSQLQuery('SELECT * FROM Up_Genero' + filter, res)
+        execSQLQuery('SELECT * FROM Up_Genero' + filtro, res)
     }
 
     deleteGenero(req, res){
