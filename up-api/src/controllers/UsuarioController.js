@@ -19,8 +19,8 @@ class UsuarioController{
     }
 
     getUsuarioFiltro(req, res){
-        const Cod_Filtro = parseInt(req.body.Cod_Filtro),
-              Nom_Filtro = req.body.Nom_Filtro.substring(0,100)
+        const Cod_Filtro = parseInt(req.query.Cod_Filtro),
+              Nom_Filtro = req.query.Nom_Filtro.substring(0,100)
 
         let filtro = ''
         

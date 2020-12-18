@@ -26,12 +26,16 @@ function buscarPorFiltro(){
         Nom_Filtro: $('#cfiltro').val()
     }
 
+    if(!model.Nom_Filtro){
+        model.Cod_Filtro = 0;
+    }
+
     $.ajax({
         method: "GET",
         url: 'http://localhost:4000/getUsuarioFiltro',
         data: model,
-        dataType: "json",
-        crossDomain: true
+        crossDomain: true,
+        dataType: "json"
     }).done(function(data){
         console.log(data);
     }).fail(function() {
