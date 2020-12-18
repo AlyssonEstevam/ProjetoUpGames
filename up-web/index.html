@@ -16,12 +16,36 @@
                 <img id="imgLogo" class="img-fluid" src="imagens/logo.png">
             </div>
             <div class="divFormulario">
-                <input type="text" id="clogin" placeholder="LOGIN" onfocus="limpaPlaceHolder(this);" onblur="adicionaPlaceHolder(this);">
-                <input type="password" id="csenha" placeholder="SENHA" onfocus="limpaPlaceHolder(this);" onblur="adicionaPlaceHolder(this);">
+                <input 
+                    type="text" 
+                    id="clogin" 
+                    placeholder="LOGIN" 
+                    onfocus="limpaPlaceHolder(this);" 
+                    onblur="adicionaPlaceHolder(this);" 
+                    onkeypress="teclaPressionada(event, this);"
+                >
+                <input 
+                    type="password" 
+                    id="csenha" 
+                    placeholder="SENHA" 
+                    onfocus="limpaPlaceHolder(this);" 
+                    onblur="adicionaPlaceHolder(this);" 
+                    onkeypress="teclaPressionada(event, this);"
+                >
             </div>
             <div class="divBotoes">
-                <input type="button" id="btnLogin" value="LOGIN" onclick="realizaLogin();">
-                <input type="button" id="btnCadastro" value="CADASTRO" onclick="abreTelaCadastro();">
+                <input 
+                    type="button" 
+                    id="btnLogin" 
+                    value="LOGIN" 
+                    onclick="realizaLogin();"
+                >
+                <input 
+                    type="button" 
+                    id="btnCadastro" 
+                    value="CADASTRO" 
+                    onclick="abreTelaCadastro();"
+                >
             </div>
         </div>
     </body>

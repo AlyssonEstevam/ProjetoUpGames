@@ -22,6 +22,7 @@ function realizaCadastro(){
 
   if(!login || !senha || !nome || !confirmaSenha){
     alert('Informe todos os campos para prosseguir!');
+    document.getElementById("cnome").focus();
     return;
   }
 
@@ -29,6 +30,7 @@ function realizaCadastro(){
     alert('As senhas informadas não coincidem!');
     $("#csenha").val("");
     $("#cconfirmasenha").val("");
+    document.getElementById("csenha").focus();
     return;
   }
 
@@ -40,6 +42,7 @@ function realizaCadastro(){
     if(data.length){
       alert('Este login já está cadastrado.');
       $("#clogin").val("");
+      document.getElementById("clogin").focus();
       return;
     }
 
@@ -61,10 +64,12 @@ function realizaCadastro(){
       window.location.href = '../index.html';
     }).fail(function() {
         alert('Ocorreu um erro no servidor, contate o administrador.')
+        document.getElementById("cnome").focus();
     });
   }).fail(function(data) {
     if(!data.length)
       alert('Ocorreu um erro no servidor, contate o administrador.')
+      document.getElementById("cnome").focus();
   });
 }
 
@@ -77,4 +82,16 @@ function limparCampos(){
 
 function abreTelaLogin(){
   window.location.href = '../index.html';
+}
+
+function teclaPressionada(e, input){
+  if(e.keyCode == 13 && input.id == 'cnome'){
+    document.getElementById("clogin").focus();
+  }else if(e.keyCode == 13 && input.id == 'clogin'){
+    document.getElementById("csenha").focus();
+  }else if(e.keyCode == 13 && input.id == 'csenha'){
+    document.getElementById("cconfirmasenha").focus();
+  }else if(e.keyCode == 13 && input.id == 'cconfirmasenha'){
+    realizaCadastro();
+  }
 }

@@ -35,10 +35,6 @@ body{
     background-color: #1c1c1c;
 }
 
-::placeholder {
-    color: #000000;
-}
-
 #cnome, #clogin, #csenha, #cconfirmasenha{
     font-weight: bold;
     font-family: snes-font;
@@ -46,6 +42,10 @@ body{
     text-align: center;
     width: 75%;
     margin: 3%
+}
+
+::placeholder {
+    color: #000000;
 }
 
 .divBotoes{

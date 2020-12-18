@@ -16,18 +16,61 @@
                 <img id="imgLogo" class="img-fluid" src="../imagens/logo.png">
             </div>
             <div class="divFormulario">
-                <input type="text" id="cnome" placeholder="NOME COMPLETO" onfocus="limpaPlaceHolder(this);" onblur="adicionaPlaceHolder(this);">
-                <input type="text" id="clogin" placeholder="LOGIN" onfocus="limpaPlaceHolder(this);" onblur="adicionaPlaceHolder(this);">
-                <input type="password" id="csenha" placeholder="SENHA" onfocus="limpaPlaceHolder(this);" onblur="adicionaPlaceHolder(this);">
-                <input type="password" id="cconfirmasenha" placeholder="CONFIRME A SENHA" onfocus="limpaPlaceHolder(this);" onblur="adicionaPlaceHolder(this);">
+                <input 
+                    type="text" 
+                    id="cnome" 
+                    placeholder="NOME COMPLETO" 
+                    onfocus="limpaPlaceHolder(this);" 
+                    onblur="adicionaPlaceHolder(this);" 
+                    onkeypress="teclaPressionada(event, this);"
+                >
+                <input 
+                    type="text" 
+                    id="clogin" 
+                    placeholder="LOGIN" 
+                    onfocus="limpaPlaceHolder(this);" 
+                    onblur="adicionaPlaceHolder(this);" 
+                    onkeypress="teclaPressionada(event, this);"
+                >
+                <input 
+                    type="password" 
+                    id="csenha" 
+                    placeholder="SENHA" 
+                    onfocus="limpaPlaceHolder(this);" 
+                    onblur="adicionaPlaceHolder(this);" 
+                    onkeypress="teclaPressionada(event, this);"
+                >
+                <input 
+                    type="password" 
+                    id="cconfirmasenha" 
+                    placeholder="CONFIRME A SENHA" 
+                    onfocus="limpaPlaceHolder(this);" 
+                    onblur="adicionaPlaceHolder(this);" 
+                    onkeypress="teclaPressionada(event, this);"
+                >
             </div>
             <div class="divBotoes">
                 <div class="divBtnCadastra">
-                    <input type="button" id="btnCadastro" value="CADASTRAR" onclick="realizaCadastro();">
-                    <input type="button" id="btnLimpar" value="LIMPAR" onclick="limparCampos();">
+                    <input 
+                        type="button" 
+                        id="btnCadastro" 
+                        value="CADASTRAR" 
+                        onclick="realizaCadastro();"
+                    >
+                    <input 
+                        type="button" 
+                        id="btnLimpar" 
+                        value="LIMPAR" 
+                        onclick="limparCampos();"
+                    >
                 </div>
                 <div class="divBtnVoltar">
-                    <input type="button" id="btnVoltar" value="VOLTAR" onclick="abreTelaLogin();">
+                    <input 
+                        type="button" 
+                        id="btnVoltar" 
+                        value="VOLTAR" 
+                        onclick="abreTelaLogin();"
+                    >
                 </div>
             </div>
         </div>
