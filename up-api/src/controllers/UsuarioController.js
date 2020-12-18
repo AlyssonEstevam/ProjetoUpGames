@@ -2,20 +2,50 @@ const execSQLQuery = require('../database/connection')
 
 class UsuarioController{
     getUsuario(req, res){
-        let filter = ''
+        let filtro = ''
 
         if(req.params.Cod_SeqUsuario) 
-            filter = ' WHERE Cod_SeqUsuario=' + parseInt(req.params.Cod_SeqUsuario)
+            filtro = ' WHERE Cod_SeqUsuario=' + parseInt(req.params.Cod_SeqUsuario)
 
-        execSQLQuery('SELECT * FROM Up_Usuario' + filter, res)
+        execSQLQuery('SELECT * FROM Up_Usuario' + filtro, res)
     }
 
     getUsuarioByLogin(req, res){
-        let filter = ''
+        let filtro = ''
 
-        filter = ' WHERE Nom_Login=\'' + req.params.Nom_Login.substring(0,30) + '\''
+        filtro = ' WHERE Nom_Login=\'' + req.params.Nom_Login.substring(0,30) + '\''
 
-        execSQLQuery('SELECT * FROM Up_Usuario' + filter, res)
+        execSQLQuery('SELECT * FROM Up_Usuario' + filtro, res)
+    }
+
+    getUsuarioFiltro(req, res){
+        const Cod_Filtro = parseInt(req.body.Cod_Filtro),
+              Nom_Filtro = req.body.Nom_Filtro.substring(0,100)
+
+        let filtro = ''
+        
+        switch(Cod_Filtro){
+            case 1:
+                filtro = ' u INNER JOIN Up_TipoUsuario tu '
+                         + 'ON tu.Cod_SeqTipoUsuario = u.Cod_TipoUsuario '
+                         + 'WHERE u.Nom_Nome LIKE \'%' + Nom_Filtro + '%\' '
+                         + 'ORDER BY u.Nom_Nome'
+                break;
+            case 2:
+                filtro = ' u INNER JOIN Up_TipoUsuario tu '
+                         + 'ON tu.Cod_SeqTipoUsuario = u.Cod_TipoUsuario '
+                         + 'WHERE u.Nom_Login LIKE \'%' + Nom_Filtro + '%\' '
+                         + 'ORDER BY u.Nom_Nome'
+                break;
+            case 3:
+                filtro = ' u INNER JOIN Up_TipoUsuario tu '
+                         + 'ON tu.Cod_SeqTipoUsuario = u.Cod_TipoUsuario '
+                         + 'WHERE tu.Nom_TipoUsuario LIKE \'%' + Nom_Filtro + '%\' '
+                         + 'ORDER BY tu.Nom_TipoUsuario'
+                break;
+        }
+
+        execSQLQuery('SELECT * FROM Up_Usuario' + filtro, res)
     }
 
     deleteUsuario(req, res){
