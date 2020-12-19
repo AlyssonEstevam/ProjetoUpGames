@@ -1,5 +1,6 @@
 const express = require('express')
 const UsuarioController = require('../controllers/UsuarioController')
+const TipoUsuarioController = require('../controllers/TipoUsuarioController')
 const JogoController = require('../controllers/JogoController')
 const GeneroController = require('../controllers/GeneroController')
 const router = express.Router()
@@ -11,6 +12,9 @@ router.get('/getUsuarioFiltro', UsuarioController.getUsuarioFiltro)
 router.delete('/deleteUsuario/:Cod_SeqUsuario', UsuarioController.deleteUsuario)
 router.post('/postUsuario', UsuarioController.postUsuario)
 router.put('/putUsuario', UsuarioController.putUsuario)
+
+//Rotas do TipoUsuarioController
+router.get('/getTipoUsuario/', TipoUsuarioController.getTipoUsuario)
 
 //Rotas do JogoController
 router.get('/getJogo/:Cod_SeqJogo?', JogoController.getJogo)
