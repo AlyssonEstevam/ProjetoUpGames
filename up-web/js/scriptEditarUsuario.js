@@ -3,8 +3,10 @@ var Cod_SeqUsuario;
 window.onload = function(){
     let dados = pegarParametros();
 
-    $('#cnome').val(dados.Nom_Nome);
-    $('#clogin').val(dados.Nom_Login);
+    carregaComboTipoUsuario(dados.Cod_TipoUsuario);
+
+    $('#cnome').val(decodeURI(dados.Nom_Nome));
+    $('#clogin').val(decodeURI(dados.Nom_Login));
     Cod_SeqUsuario = dados.Cod_SeqUsuario;
 }
 
@@ -20,6 +22,30 @@ function pegarParametros(){
     });
 
     return(dados); 
+}
+
+function carregaComboTipoUsuario(Cod_TipoUsuario){
+  $.ajax({
+    method: "GET",
+    url: 'http://localhost:4000/getTipoUsuario',
+    crossDomain: true,
+    dataType: "json"
+  }).done(function(data){
+    data.forEach(function(x){
+      var option = document.createElement('option');
+      let textnode = document.createTextNode(x.Nom_TipoUsuario);
+      option.appendChild(textnode);
+      option.setAttribute('value', x.Cod_SeqTipoUsuario);
+
+      if(x.Cod_SeqTipoUsuario == Cod_TipoUsuario)
+        option.setAttribute('selected', 'selected');
+
+      document.getElementById('comboFiltros').appendChild(option);
+    });
+  }).fail(function() {
+    alert('Ocorreu um erro no servidor, contate o administrador.');
+    return;
+  });
 }
 
 function limpaPlaceHolder(input){
@@ -38,27 +64,41 @@ function limpaPlaceHolder(input){
     }
   }
   
-  function realizaCadastro(){
-    let nome = $('#cnome').val();
-    let login = $('#clogin').val();
-    let senha = $('#csenha').val();
-    let confirmaSenha = $('#cconfirmasenha').val();
+  function realizaEdicao(){
+    let nome = $('#cnome').val(),
+        codigoTipoUsuario = $('#comboFiltros').val(),
+        login = $('#clogin').val(),
+        senha = $('#csenha').val(),
+        confirmaSenha = $('#cconfirmasenha').val();
   
-    if(!login || !senha || !nome || !confirmaSenha){
-      alert('Informe todos os campos para prosseguir!');
+    if(!nome){
+      alert('Informe o nome para prosseguir!');
       document.getElementById("cnome").focus();
       return;
     }
+
+    if(codigoTipoUsuario == 0){
+      alert('Informe o tipo de usuário para prosseguir!');
+      return;
+    }
+
+    if(!login){
+      alert('Informe o login para prosseguir!');
+      document.getElementById("clogin").focus();
+      return;
+    }
   
-    if(senha != confirmaSenha){
+    if((senha || confirmaSenha) && senha != confirmaSenha){
       alert('As senhas informadas não coincidem!');
       $("#csenha").val("");
       $("#cconfirmasenha").val("");
       document.getElementById("csenha").focus();
       return;
     }
+
+    alert('EDIÇÃO OK!');
   
-    $.ajax({
+    /*$.ajax({
       method: "GET",
       url: 'http://localhost:4000/getUsuarioByLogin/' + login,
       crossDomain: true
@@ -94,18 +134,15 @@ function limpaPlaceHolder(input){
       if(!data.length)
         alert('Ocorreu um erro no servidor, contate o administrador.')
         document.getElementById("cnome").focus();
-    });
+    });*/
   }
   
-  function limparCampos(){
-    $("#cnome").val("");
-    $("#clogin").val("");
-    $("#csenha").val("");
-    $("#cconfirmasenha").val("");
+  function excluirUsuario(){
+    alert('Vamos EXCLUIR!');
   }
   
-  function abreTelaLogin(){
-    window.location.href = '../index.html';
+  function abreTelaManterUsuario(){
+    window.location.href = 'manterUsuario.html';
   }
   
   function teclaPressionada(e, input){

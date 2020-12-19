@@ -67,12 +67,12 @@ body{
     border-bottom-right-radius: 10px;
 }
 
-.divBtnCadastra{
+.divBtnEdita{
     display: flex;
     flex-direction: row;
 }
 
-#btnCadastro, #btnLimpar, #btnVoltar{
+#btnEdita, #btnLimpar, #btnVoltar{
     font-family: snes-font;
     font-size: 30px;
     font-weight: bold;
@@ -84,7 +84,7 @@ body{
     border-radius: 10px;
 }
 
-#btnCadastro:hover, #btnLimpar:hover, #btnVoltar:hover{
+#btnEdita:hover, #btnLimpar:hover, #btnVoltar:hover{
     background-color:white;
     color: #f35f40;
 }

@@ -24,11 +24,8 @@
                     onblur="adicionaPlaceHolder(this);" 
                     onkeypress="teclaPressionada(event, this);"
                 >
-                <select id="comboFiltros" >
+                <select id="comboFiltros">
                     <option value="0">Tipo de Usuario</option>
-                    <option value="1">Nome</option>
-                    <option value="2">Login</option>
-                    <option value="3">Tipo de Usuario</option>
                 </select>
                 <input 
                     type="text" 
@@ -56,18 +53,18 @@
                 >
             </div>
             <div class="divBotoes">
-                <div class="divBtnCadastra">
+                <div class="divBtnEdita">
                     <input 
                         type="button" 
-                        id="btnCadastro" 
+                        id="btnEdita" 
                         value="EDITAR" 
-                        onclick="realizaCadastro();"
+                        onclick="realizaEdicao();"
                     >
                     <input 
                         type="button" 
                         id="btnLimpar" 
-                        value="LIMPAR" 
-                        onclick="limparCampos();"
+                        value="EXCLUIR" 
+                        onclick="excluirUsuario();"
                     >
                 </div>
                 <div class="divBtnVoltar">
@@ -75,7 +72,7 @@
                         type="button" 
                         id="btnVoltar" 
                         value="VOLTAR" 
-                        onclick="abreTelaLogin();"
+                        onclick="abreTelaManterUsuario();"
                     >
                 </div>
             </div>
