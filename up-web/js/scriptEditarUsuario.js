@@ -1,4 +1,4 @@
-var Cod_SeqUsuario;
+var codigoUsuario;
 
 window.onload = function(){
     let dados = pegarParametros();
@@ -7,7 +7,7 @@ window.onload = function(){
 
     $('#cnome').val(decodeURI(dados.Nom_Nome));
     $('#clogin').val(decodeURI(dados.Nom_Login));
-    Cod_SeqUsuario = dados.Cod_SeqUsuario;
+    codigoUsuario = dados.Cod_SeqUsuario;
 }
 
 function pegarParametros(){
@@ -95,10 +95,8 @@ function limpaPlaceHolder(input){
       document.getElementById("csenha").focus();
       return;
     }
-
-    alert('EDIÇÃO OK!');
   
-    /*$.ajax({
+    $.ajax({
       method: "GET",
       url: 'http://localhost:4000/getUsuarioByLogin/' + login,
       crossDomain: true
@@ -111,30 +109,35 @@ function limpaPlaceHolder(input){
       }
   
       let model = {
+        Cod_SeqUsuario: codigoUsuario,
         Nom_Nome: nome,
         Nom_Login: login,
         Nom_Senha: senha,
-        Cod_TipoUsuario: 3
+        Cod_TipoUsuario: codigoTipoUsuario
+      }
+
+      if(!model.Nom_Senha){
+        model.Nom_Senha = '';
       }
   
       $.ajax({
-        method: "POST",
-        url: 'http://localhost:4000/postUsuario',
+        method: "PUT",
+        url: 'http://localhost:4000/putUsuario',
         data: model,
         dataType: "json",
         crossDomain: true
       }).done(function(){
-        alert('Usuário inserido com sucesso, por favor realize o login.')
-        window.location.href = '../index.html';
+        alert('Usuário editado com sucesso!')
+        abreTelaManterUsuario()
       }).fail(function() {
-          alert('Ocorreu um erro no servidor, contate o administrador.')
+          alert('Ocorreu um erro no servidor, contate o administrador: ')
           document.getElementById("cnome").focus();
       });
     }).fail(function(data) {
       if(!data.length)
         alert('Ocorreu um erro no servidor, contate o administrador.')
         document.getElementById("cnome").focus();
-    });*/
+    });
   }
   
   function excluirUsuario(){

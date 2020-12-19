@@ -61,7 +61,7 @@ function realizaCadastro(){
       crossDomain: true
     }).done(function(){
       alert('Usuário inserido com sucesso, por favor realize o login.')
-      window.location.href = '../index.html';
+      abreTelaLogin();
     }).fail(function() {
         alert('Ocorreu um erro no servidor, contate o administrador.')
         document.getElementById("cnome").focus();

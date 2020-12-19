@@ -68,17 +68,28 @@ class UsuarioController{
     }
 
     putUsuario(req, res){
+        console.log('Senha: ' + req.body.Nom_Senha);
+
         const Cod_SeqUsuario = parseInt(req.body.Cod_SeqUsuario),
               Nom_Nome = req.body.Nom_Nome.substring(0,100),
               Nom_Login = req.body.Nom_Login.substring(0,30),
               Nom_Senha = req.body.Nom_Senha.substring(0,20),
               Cod_TipoUsuario = parseInt(req.body.Cod_TipoUsuario)
 
-        execSQLQuery(`UPDATE Up_Usuario SET Nom_Nome='${Nom_Nome}', 
-                                         Nom_Login='${Nom_Login}', 
-                                         Nom_Senha='${Nom_Senha}', 
-                                         Cod_TipoUsuario='${Cod_TipoUsuario}'  
+        if(Nom_Senha){
+            execSQLQuery(`UPDATE Up_Usuario SET Nom_Nome='${Nom_Nome}', 
+                                                Nom_Login='${Nom_Login}', 
+                                                Nom_Senha='${Nom_Senha}', 
+                                                Cod_TipoUsuario='${Cod_TipoUsuario}'  
                         WHERE Cod_SeqUsuario=${Cod_SeqUsuario}`, res)
+        }else{
+            execSQLQuery(`UPDATE Up_Usuario SET Nom_Nome='${Nom_Nome}', 
+                                                Nom_Login='${Nom_Login}', 
+                                                Cod_TipoUsuario='${Cod_TipoUsuario}'  
+                        WHERE Cod_SeqUsuario=${Cod_SeqUsuario}`, res)
+        }
+
+        
     }
 }
 
