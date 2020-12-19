@@ -11,7 +11,7 @@ body{
 .container{
     display: grid;
     grid-template-columns: 1fr 6fr;
-    grid-template-rows: 1fr 1fr 4fr 1fr;
+    grid-template-rows: 1fr 1fr 9fr 1fr;
     width: 80vw;
     height: 100vh;
     grid-template-areas: "logo menus" "filtro filtro" "conteudo conteudo" "rodape rodape";
@@ -108,8 +108,37 @@ body{
 .divContent{
     display: flex;
     grid-area: conteudo;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+}
+
+table.gridResultado{
+    width: 90%;
+    font-family: snes-font;
+    color: white;
+}
+
+table.gridResultado thead td{
+    border: 1pt solid white;
+    font-size: 30px;
+    text-align: center;
+    background-color: #000000;
+}
+
+table.gridResultado tbody tr:hover{
+    background-color: #f35f40;
+    color: black;
+    cursor: pointer;
+}
+
+table.gridResultado tbody td{
+    font-size: 28px;
+    border-bottom: 1pt solid white;
+    
+}
+
+table.gridResultado tbody td:first-child{
+    text-align: center;
 }
 
 .divRodape{

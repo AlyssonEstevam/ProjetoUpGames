@@ -43,6 +43,11 @@ class UsuarioController{
                          + 'WHERE tu.Nom_TipoUsuario LIKE \'%' + Nom_Filtro + '%\' '
                          + 'ORDER BY tu.Nom_TipoUsuario'
                 break;
+            default:
+                filtro = ' u INNER JOIN Up_TipoUsuario tu '
+                         + 'ON tu.Cod_SeqTipoUsuario = u.Cod_TipoUsuario '
+                         + 'ORDER BY u.Cod_SeqUsuario'
+                break;
         }
 
         execSQLQuery('SELECT * FROM Up_Usuario' + filtro, res)
