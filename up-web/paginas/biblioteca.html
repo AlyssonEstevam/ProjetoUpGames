@@ -5,26 +5,31 @@
         <meta charset="UTF-8">
         <link rel="shortcut icon" href="../imagens/logo16.ico" />
         <link rel="stylesheet" type="text/css" href="../estilo/styleGeral.css">
+        <link rel="stylesheet" type="text/css" href="../estilo/bootstrap.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <script src="../js/scriptBiblioteca.js"></script>
     </head>
     <body>
-        <div id="interface">
-            <header id="titulo">
-                <a href="home.html"><img id="logo" src="../imagens/logo.png"></a>
-                <nav id="menu">
-                    <ol>
-                        <li><a href="home.html">Home</a></li>
-                        <li><a href="loja.html">Loja</a></li>
-                        <li><a href="biblioteca.html">Biblioteca</a></li>
-                        <li><a href="perfil.html">Perfil</a></li>
-                    </ol>
-                    <ol class="sair">
-                        <li><a href="../index.html">Sair</a></li>
-                    </ol>
-                </nav>
-            </header>
-            </div>
-    
+        <nav class="navbar navbar-expand-sm cor-menu navbar-dark">
+            <a href="#"><img id="logo" src="../imagens/logo.png" width="150" height="100"></a>
+            <ol class="navbar-nav itens-menu container">
+              <li class="nav-item" >
+                <a class="nav-link " href="home.html">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="loja.html" >LOJA</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="biblioteca.html">BIBLIOTECA</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html">SAIR</a>
+              </li>
+            </ol>
+          </nav>
+            
     <section id="jogos">
         <div class="bib">
             <h1>Minha Biblioteca de Jogos</h1>

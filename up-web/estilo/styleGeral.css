@@ -7,68 +7,10 @@ html,body{
     margin:0;
 }
 
-header#titulo img#logo{
-    top: 1px;
-    width: 200px;
-    height: 152px;
-    position: absolute;
-    margin-bottom: 5px;
+.itens-menu{
+    font-size: 15pt;
+    display: flex;
 }
-
-header#titulo nav#menu{
-    display: block;
-    font-weight: bold;
-    font-size: 17pt;
-}
-
-header#titulo nav#menu ol.sair{
-    list-style: none;
-    text-transform: uppercase;
-    top: 40px;
-    left: 1620px;
-    position: absolute;
-    font-size: 14pt;
-}
-
-header#titulo nav#menu ol{
-    list-style: none;
-    text-transform: uppercase;
-    top: 30px;
-    left: 500px;
-    position: absolute;
-}
-
-header#titulo nav#menu li{
-    display: inline-block;
-    margin-left: 80px;
-    padding: 15px;
-    
-}
-
-div#interface{
-    height: 160px;
-    border-bottom: 2px solid white;
-    margin-bottom: -12px;
-    margin-top: -7px;
-    background-color: #1b1b1bfd;
-}
-
-header#titulo nav#menu li:hover{
-    background-color:rgba(0,0,0,0.5);
-    transition: all .6s cubic-bezier(1,1,1,1);
-    
-}
-
-header#titulo nav#menu a{
-    color: white;
-    text-decoration: none;
-}
-
-header#titulo nav#menu a:hover{
-    color: white;
-    text-decoration: underline;
-}
-
 /* começa cima */
 
 
@@ -183,7 +125,6 @@ footer#rodape2 div.rodapefinal2{
 
 section#aventura{
     background-color: #1b1b1bfd;
-    margin-top: -33px;
     border-bottom: 1.5px solid white;
 }
 
@@ -210,12 +151,12 @@ section#aventura img:hover{
 
 div.preco1{
     width: 100px;
-    height: 70px;
+    height: 50px;
     background-color: #1b1b1bbe;
     float: left;
     position: relative;
     left: 120px;
-    margin-top: -90px;
+    margin-top: -80px;
     display: block;
     border: 2px solid white;
     border-radius: 20px 20px;
@@ -223,12 +164,12 @@ div.preco1{
 
 div.preco2{
     width: 100px;
-    height: 70px;
+    height: 50px;
     background-color: #1b1b1bbe;
     float: left;
     position: relative;
     left: 535px;
-    margin-top: -90px;
+    margin-top: -80px;
     display: block;
     border: 2px solid white;
     border-radius: 20px 20px;
@@ -236,12 +177,12 @@ div.preco2{
 
 div.preco3{
     width: 100px;
-    height: 70px;
+    height: 50px;
     background-color: #1b1b1bbe;
     float: left;
     position: relative;
     left: 950px;
-    margin-top: -90px;
+    margin-top: -80px;
     display: block;
     border: 2px solid white;
     border-radius: 20px 20px;
@@ -249,12 +190,12 @@ div.preco3{
 
 div.preco4{
     width: 100px;
-    height: 70px;
+    height: 50px;
     background-color: #1b1b1bbe;
     float: left;
     position: relative;
     left: 1365px;
-    margin-top: -90px;
+    margin-top: -80px;
     display: block;
     border: 2px solid white;
     border-radius: 20px 20px;
@@ -355,7 +296,7 @@ div.borda{
     border-left: 2px solid white;
     border-right: 2px solid white;
     border-bottom: 2px solid white;
-    margin-top: -1830px;
+    margin-top: -1780px;
     margin-left: 230px;
 }
 
