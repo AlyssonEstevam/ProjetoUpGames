@@ -39,7 +39,7 @@ function adicionaPlaceHolder(input){
   }
 }
 
-function realizaEdicao(){
+function realizaCadastro(){
   let nome = $('#cnome').val(),
       codigoTipoUsuario = $('#comboFiltros').val(),
       login = $('#clogin').val(),
@@ -51,17 +51,31 @@ function realizaEdicao(){
     document.getElementById("cnome").focus();
     return;
   }
+
   if(codigoTipoUsuario == 0){
     alert('Informe o tipo de usuário para prosseguir!');
     return;
   }
+
   if(!login){
     alert('Informe o login para prosseguir!');
     document.getElementById("clogin").focus();
     return;
   }
 
-  if((senha || confirmaSenha) && senha != confirmaSenha){
+  if(!senha){
+    alert('Informe a senha para prosseguir!');
+    document.getElementById("csenha").focus();
+    return;
+  }
+
+  if(!senha){
+    alert('Informe a confirmação de senha para prosseguir!');
+    document.getElementById("cconfirmasenha").focus();
+    return;
+  }
+
+  if(senha != confirmaSenha){
     alert('As senhas informadas não coincidem!');
     $("#csenha").val("");
     $("#cconfirmasenha").val("");
@@ -74,7 +88,7 @@ function realizaEdicao(){
     url: 'http://localhost:4000/getUsuarioByLogin/' + login,
     crossDomain: true
   }).done(function(data) {
-    if(data.length && data[0].Cod_SeqUsuario != codigoUsuario){
+    if(data.length){
       alert('Este login já está cadastrado.');
       $("#clogin").val("");
       document.getElementById("clogin").focus();
@@ -82,55 +96,34 @@ function realizaEdicao(){
     }
 
     let model = {
-      Cod_SeqUsuario: codigoUsuario,
       Nom_Nome: nome,
       Nom_Login: login,
       Nom_Senha: senha,
       Cod_TipoUsuario: codigoTipoUsuario
     }
-    if(!model.Nom_Senha){
-      model.Nom_Senha = '';
-    }
 
     $.ajax({
-      method: "PUT",
-      url: 'http://localhost:4000/putUsuario',
+      method: "POST",
+      url: 'http://localhost:4000/postUsuario',
       data: model,
       dataType: "json",
       crossDomain: true
     }).done(function(){
-      alert('Usuário editado com sucesso!')
-      abreTelaManterUsuario()
+      alert('Usuário cadastrado com sucesso!');
+      abreTelaBuscarUsuario();
     }).fail(function() {
-      alert('Ocorreu um erro no servidor, contate o administrador: ')
+      alert('Ocorreu um erro no servidor, contate o administrador: ');
       document.getElementById("cnome").focus();
     });
   }).fail(function(data) {
     if(!data.length)
-      alert('Ocorreu um erro no servidor, contate o administrador.')
+      alert('Ocorreu um erro no servidor, contate o administrador.');
       document.getElementById("cnome").focus();
   });
 }
 
-function excluirUsuario(){
-  if(confirm("Deseja mesmo deletar o usuário?")){
-    $.ajax({
-      method: "DELETE",
-      url: 'http://localhost:4000/deleteUsuario/' + codigoUsuario,
-      dataType: "json",
-      crossDomain: true
-    }).done(function(){
-      alert('Usuário deletado com sucesso.')
-      abreTelaManterUsuario()
-    }).fail(function() {
-      alert('Ocorreu um erro no servidor, contate o administrador: ')
-      document.getElementById("cnome").focus();
-    });
-  }
-}
-
-function abreTelaManterUsuario(){
-  window.location.href = 'manterUsuario.html';
+function abreTelaBuscarUsuario(){
+  window.location.href = 'buscarUsuario.html';
 }
 
 function teclaPressionada(e, input){
@@ -143,10 +136,6 @@ function teclaPressionada(e, input){
   }else if(e.keyCode == 13 && input.id == 'cconfirmasenha'){
     realizaCadastro();
   }
-}
-
-function abreTelaCadastrarUsuario(){
-  window.location.href = 'cadastrarUsuario.html';
 }
 
 function limparCampos(){

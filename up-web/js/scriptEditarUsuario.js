@@ -76,10 +76,12 @@ function realizaEdicao(){
     document.getElementById("cnome").focus();
     return;
   }
+
   if(codigoTipoUsuario == 0){
     alert('Informe o tipo de usuário para prosseguir!');
     return;
   }
+  
   if(!login){
     alert('Informe o login para prosseguir!');
     document.getElementById("clogin").focus();
@@ -113,6 +115,7 @@ function realizaEdicao(){
       Nom_Senha: senha,
       Cod_TipoUsuario: codigoTipoUsuario
     }
+
     if(!model.Nom_Senha){
       model.Nom_Senha = '';
     }
@@ -124,8 +127,8 @@ function realizaEdicao(){
       dataType: "json",
       crossDomain: true
     }).done(function(){
-      alert('Usuário editado com sucesso!')
-      abreTelaManterUsuario()
+      alert('Usuário editado com sucesso!');
+      abreTelaBuscarUsuario();
     }).fail(function() {
       alert('Ocorreu um erro no servidor, contate o administrador: ')
       document.getElementById("cnome").focus();
@@ -146,7 +149,7 @@ function excluirUsuario(){
       crossDomain: true
     }).done(function(){
       alert('Usuário deletado com sucesso.')
-      abreTelaManterUsuario()
+      abreTelaBuscarUsuario()
     }).fail(function() {
       alert('Ocorreu um erro no servidor, contate o administrador: ')
       document.getElementById("cnome").focus();
@@ -154,8 +157,8 @@ function excluirUsuario(){
   }
 }
 
-function abreTelaManterUsuario(){
-  window.location.href = 'manterUsuario.html';
+function abreTelaBuscarUsuario(){
+  window.location.href = 'buscarUsuario.html';
 }
 
 function teclaPressionada(e, input){

@@ -1,5 +1,5 @@
-function abreTelaManterJogo(){
-    window.location.href = 'manterJogo.html';
+function abreTelaBuscarJogo(){
+    window.location.href = 'buscarJogo.html';
 }
 
 function abreTelaLogin(){

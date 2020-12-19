@@ -68,8 +68,6 @@ class UsuarioController{
     }
 
     putUsuario(req, res){
-        console.log('Senha: ' + req.body.Nom_Senha);
-
         const Cod_SeqUsuario = parseInt(req.body.Cod_SeqUsuario),
               Nom_Nome = req.body.Nom_Nome.substring(0,100),
               Nom_Login = req.body.Nom_Login.substring(0,30),
