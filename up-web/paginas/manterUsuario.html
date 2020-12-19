@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>UPgames</title>
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="../imagens/logo16.ico" />
+        <link rel="stylesheet" type="text/css" href="../estilo/styleManterUsuario.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="../js/scriptManterUsuario.js"></script>
+    </head>
+    <body>
+        <div class="container">
+          <div class="divLogo">
+            <img id="imgLogoMenu" src="../imagens/logo.png">
+          </div>
+          <div class="divMenu">
+            <div class="menu-item ativo">MANTER USUARIOS</div>
+            <div class="menu-item" onclick="abreTelaManterJogo();">MANTER JOGOS</div>
+            <div class="menu-item" onclick="abreTelaLogin();">SAIR</div>
+          </div>
+          <div class="divFiltro">
+            <select id="comboFiltros" >
+                <option value="0">Selecione...</option>
+                <option value="1">Nome</option>
+                <option value="2">Login</option>
+                <option value="3">Tipo de Usuario</option>
+            </select>
+            <input 
+                    type="text" 
+                    id="cfiltro" 
+                    placeholder="DIGITE O FILTRO DE BUSCA..." 
+                    onfocus="limpaPlaceHolder(this);" 
+                    onblur="adicionaPlaceHolder(this);" 
+                    onkeypress="teclaPressionada(event);"
+            >
+            <div id="btnFiltrar" onclick="buscarPorFiltro();">
+                <i class="material-icons" id="iconBusca">search</i>
+            </div>
+          </div>
+          <div class="divContent">
+            <table class="gridResultado">
+              <colgroup>
+                <col style="width: 10%;">
+                <col style="width: 25%;">
+                <col style="width: 40%;">
+                <col style="width: 25%;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <td>CODIGO</td>
+                  <td>TIPO DE USUARIO</td>
+                  <td>NOME COMPLETO</td>
+                  <td>LOGIN</td>
+                </tr>
+              </thead>
+              <tbody id="bodyTabela">
+                
+              </body>
+            </table>
+          </div>
+          <div class="divRodape">
+              <img id="imgLogoRodape" src="../imagens/logo.png">
+              <p id="textoRodape">© 2020 - UP Games. All Rights Reserved</p>
+          </div>
+        </div>
+    </body>
+</html>

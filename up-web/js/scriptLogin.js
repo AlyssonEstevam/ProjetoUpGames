@@ -16,6 +16,7 @@ function realizaLogin(){
 
   if(!login || !senha){
     alert('Informe o usuário e a senha!');
+    document.getElementById("clogin").focus();
     return;
   }
 
@@ -27,6 +28,7 @@ function realizaLogin(){
     if(!data.length){
       alert('Usuário não encontrado no sistema!');
       limparCampos();
+      document.getElementById("clogin").focus();
       return;
     }
 
@@ -41,6 +43,7 @@ function realizaLogin(){
     }else{
       alert('Combinação de usuário e senha incorreta!');
       limparCampos();
+      document.getElementById("clogin").focus();
       return;
     }
 
@@ -48,6 +51,7 @@ function realizaLogin(){
     if(!data.length)
       alert('Ocorreu um erro no servidor, contate o administrador.');
       limparCampos();
+      document.getElementById("clogin").focus();
   });
 }
 
@@ -58,4 +62,12 @@ function limparCampos(){
 
 function abreTelaCadastro(){
   window.location.href = 'paginas/cadastro.html';
+}
+
+function teclaPressionada(e, input){
+  if(e.keyCode == 13 && input.id == 'clogin'){
+    document.getElementById("csenha").focus();
+  }else if(e.keyCode == 13 && input.id == 'csenha'){
+    realizaLogin();
+  }
 }

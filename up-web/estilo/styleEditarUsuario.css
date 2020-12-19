@@ -35,7 +35,16 @@ body{
     background-color: #1c1c1c;
 }
 
-#cnome, #clogin, #csenha, #cconfirmasenha{
+#cnome, #clogin, #csenha, #cconfirmasenha, #comboFiltros{
+    font-weight: bold;
+    font-family: snes-font;
+    font-size: 30px;
+    text-align: center;
+    width: 75%;
+    margin: 3%
+}
+
+#comboFiltros{
     font-weight: bold;
     font-family: snes-font;
     font-size: 30px;
@@ -58,12 +67,12 @@ body{
     border-bottom-right-radius: 10px;
 }
 
-.divBtnCadastra{
+.divBtnEdita{
     display: flex;
     flex-direction: row;
 }
 
-#btnCadastro, #btnLimpar, #btnVoltar{
+#btnEdita, #btnLimpar, #btnVoltar{
     font-family: snes-font;
     font-size: 30px;
     font-weight: bold;
@@ -75,7 +84,7 @@ body{
     border-radius: 10px;
 }
 
-#btnCadastro:hover, #btnLimpar:hover, #btnVoltar:hover{
+#btnEdita:hover, #btnLimpar:hover, #btnVoltar:hover{
     background-color:white;
     color: #f35f40;
 }

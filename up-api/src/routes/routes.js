@@ -8,7 +8,7 @@ const router = express.Router()
 //Rotas do UsuarioController
 router.get('/getUsuario/:Cod_SeqUsuario?', UsuarioController.getUsuario)
 router.get('/getUsuarioByLogin/:Nom_Login?', UsuarioController.getUsuarioByLogin)
-router.get('/getUsuarioFiltro', UsuarioController.getUsuarioFiltro)
+router.get('/getUsuarioFiltro/', UsuarioController.getUsuarioFiltro)
 router.delete('/deleteUsuario/:Cod_SeqUsuario', UsuarioController.deleteUsuario)
 router.post('/postUsuario', UsuarioController.postUsuario)
 router.put('/putUsuario', UsuarioController.putUsuario)

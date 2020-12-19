@@ -4,11 +4,11 @@
         <title>UPgames</title>
         <meta charset="UTF-8">
         <link rel="shortcut icon" href="../imagens/logo16.ico" />
-        <link rel="stylesheet" type="text/css" href="../estilo/styleCadastro.css">
+        <link rel="stylesheet" type="text/css" href="../estilo/styleEditarUsuario.css">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="../js/scriptCadastro.js"></script>
+        <script src="../js/scriptEditarUsuario.js"></script>
     </head>
     <body>
         <div class="container">
@@ -24,6 +24,9 @@
                     onblur="adicionaPlaceHolder(this);" 
                     onkeypress="teclaPressionada(event, this);"
                 >
+                <select id="comboFiltros">
+                    <option value="0">Tipo de Usuario</option>
+                </select>
                 <input 
                     type="text" 
                     id="clogin" 
@@ -50,18 +53,18 @@
                 >
             </div>
             <div class="divBotoes">
-                <div class="divBtnCadastra">
+                <div class="divBtnEdita">
                     <input 
                         type="button" 
-                        id="btnCadastro" 
-                        value="CADASTRAR" 
-                        onclick="realizaCadastro();"
+                        id="btnEdita" 
+                        value="EDITAR" 
+                        onclick="realizaEdicao();"
                     >
                     <input 
                         type="button" 
                         id="btnLimpar" 
-                        value="LIMPAR" 
-                        onclick="limparCampos();"
+                        value="EXCLUIR" 
+                        onclick="excluirUsuario();"
                     >
                 </div>
                 <div class="divBtnVoltar">
@@ -69,7 +72,7 @@
                         type="button" 
                         id="btnVoltar" 
                         value="VOLTAR" 
-                        onclick="abreTelaLogin();"
+                        onclick="abreTelaManterUsuario();"
                     >
                 </div>
             </div>

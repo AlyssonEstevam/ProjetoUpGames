@@ -19,8 +19,8 @@ class UsuarioController{
     }
 
     getUsuarioFiltro(req, res){
-        const Cod_Filtro = parseInt(req.body.Cod_Filtro),
-              Nom_Filtro = req.body.Nom_Filtro.substring(0,100)
+        const Cod_Filtro = parseInt(req.query.Cod_Filtro),
+              Nom_Filtro = req.query.Nom_Filtro.substring(0,100)
 
         let filtro = ''
         
@@ -43,6 +43,11 @@ class UsuarioController{
                          + 'WHERE tu.Nom_TipoUsuario LIKE \'%' + Nom_Filtro + '%\' '
                          + 'ORDER BY tu.Nom_TipoUsuario'
                 break;
+            default:
+                filtro = ' u INNER JOIN Up_TipoUsuario tu '
+                         + 'ON tu.Cod_SeqTipoUsuario = u.Cod_TipoUsuario '
+                         + 'ORDER BY u.Cod_SeqUsuario'
+                break;
         }
 
         execSQLQuery('SELECT * FROM Up_Usuario' + filtro, res)
@@ -63,17 +68,28 @@ class UsuarioController{
     }
 
     putUsuario(req, res){
+        console.log('Senha: ' + req.body.Nom_Senha);
+
         const Cod_SeqUsuario = parseInt(req.body.Cod_SeqUsuario),
               Nom_Nome = req.body.Nom_Nome.substring(0,100),
               Nom_Login = req.body.Nom_Login.substring(0,30),
               Nom_Senha = req.body.Nom_Senha.substring(0,20),
               Cod_TipoUsuario = parseInt(req.body.Cod_TipoUsuario)
 
-        execSQLQuery(`UPDATE Up_Usuario SET Nom_Nome='${Nom_Nome}', 
-                                         Nom_Login='${Nom_Login}', 
-                                         Nom_Senha='${Nom_Senha}', 
-                                         Cod_TipoUsuario='${Cod_TipoUsuario}'  
+        if(Nom_Senha){
+            execSQLQuery(`UPDATE Up_Usuario SET Nom_Nome='${Nom_Nome}', 
+                                                Nom_Login='${Nom_Login}', 
+                                                Nom_Senha='${Nom_Senha}', 
+                                                Cod_TipoUsuario='${Cod_TipoUsuario}'  
                         WHERE Cod_SeqUsuario=${Cod_SeqUsuario}`, res)
+        }else{
+            execSQLQuery(`UPDATE Up_Usuario SET Nom_Nome='${Nom_Nome}', 
+                                                Nom_Login='${Nom_Login}', 
+                                                Cod_TipoUsuario='${Cod_TipoUsuario}'  
+                        WHERE Cod_SeqUsuario=${Cod_SeqUsuario}`, res)
+        }
+
+        
     }
 }
 
