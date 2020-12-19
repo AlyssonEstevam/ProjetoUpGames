@@ -95,3 +95,7 @@ function selecionaUsuario(linha){
                            + '&Nom_Nome=' + model.Nom_Nome
                            + '&Nom_Login=' + model.Nom_Login;
 }
+
+function abreTelaCadastrarUsuario(){
+    window.location.href = 'cadastrarNovoUsuario.html';
+}

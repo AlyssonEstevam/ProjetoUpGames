@@ -1,30 +1,8 @@
-var codigoUsuario;
-
 window.onload = function(){
-    let dados = pegarParametros();
-
-    carregaComboTipoUsuario(dados.Cod_TipoUsuario);
-
-    $('#cnome').val(decodeURI(dados.Nom_Nome));
-    $('#clogin').val(decodeURI(dados.Nom_Login));
-    codigoUsuario = dados.Cod_SeqUsuario;
+    carregaComboTipoUsuario();
 }
 
-function pegarParametros(){
-    var query = location.search.slice(1);
-    var partes = query.split('&');
-    var dados = {};
-    partes.forEach(function (parte) {
-        var chaveValor = parte.split('=');
-        var chave = chaveValor[0];
-        var valor = chaveValor[1];
-        dados[chave] = valor;
-    });
-
-    return(dados); 
-}
-
-function carregaComboTipoUsuario(Cod_TipoUsuario){
+function carregaComboTipoUsuario(){
   $.ajax({
     method: "GET",
     url: 'http://localhost:4000/getTipoUsuario',
@@ -36,9 +14,6 @@ function carregaComboTipoUsuario(Cod_TipoUsuario){
       let textnode = document.createTextNode(x.Nom_TipoUsuario);
       option.appendChild(textnode);
       option.setAttribute('value', x.Cod_SeqTipoUsuario);
-
-      if(x.Cod_SeqTipoUsuario == Cod_TipoUsuario)
-        option.setAttribute('selected', 'selected');
 
       document.getElementById('comboFiltros').appendChild(option);
     });
@@ -169,3 +144,16 @@ function teclaPressionada(e, input){
     realizaCadastro();
   }
 }
+
+function abreTelaCadastrarUsuario(){
+  window.location.href = 'cadastrarUsuario.html';
+}
+
+function limparCampos(){
+    $("#cnome").val("");
+    $("#clogin").val("");
+    $("#csenha").val("");
+    $("#cconfirmasenha").val("");
+    $("#comboFiltros").val("0");
+}
+  
