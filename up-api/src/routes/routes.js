@@ -18,6 +18,7 @@ router.get('/getTipoUsuario/', TipoUsuarioController.getTipoUsuario)
 
 //Rotas do JogoController
 router.get('/getJogo/:Cod_SeqJogo?', JogoController.getJogo)
+router.get('/getJogoFiltro/', JogoController.getJogoFiltro)
 router.delete('/deleteJogo/:Cod_SeqJogo', JogoController.deleteJogo)
 router.post('/postJogo', JogoController.postJogo)
 router.put('/putJogo', JogoController.putJogo)

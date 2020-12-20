@@ -10,6 +10,35 @@ class JogoController{
         execSQLQuery('SELECT * FROM Up_Jogo' + filtro, res)
     }
 
+    getJogoFiltro(req, res){
+        const Cod_Filtro = parseInt(req.query.Cod_Filtro),
+              Nom_Filtro = req.query.Nom_Filtro.substring(0,100)
+
+        let filtro = ''
+        
+        switch(Cod_Filtro){
+            case 1:
+                filtro = ' j INNER JOIN Up_Genero g '
+                         + 'ON g.Cod_SeqGenero = j.Cod_Genero '
+                         + 'WHERE j.Nom_Nome LIKE \'%' + Nom_Filtro + '%\' '
+                         + 'ORDER BY j.Nom_Nome'
+                break;
+            case 2:
+                filtro = ' j INNER JOIN Up_Genero g '
+                         + 'ON g.Cod_SeqGenero = j.Cod_Genero '
+                         + 'WHERE g.Nom_Genero LIKE \'%' + Nom_Filtro + '%\' '
+                         + 'ORDER BY g.Nom_Genero'
+                break;
+            default:
+                filtro = ' j INNER JOIN Up_Genero g '
+                         + 'ON g.Cod_SeqGenero = j.Cod_Genero '
+                         + 'ORDER BY j.Cod_SeqJogo'
+                break;
+        }
+
+        execSQLQuery('SELECT * FROM Up_Jogo' + filtro, res)
+    }
+
     deleteJogo(req, res){
         execSQLQuery('DELETE FROM Up_Jogo WHERE Cod_SeqJogo=' + parseInt(req.params.Cod_SeqJogo), res)
     }

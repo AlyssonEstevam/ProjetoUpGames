@@ -39,6 +39,10 @@ function buscarPorFiltro(){
         crossDomain: true,
         dataType: "json"
     }).done(function(data){
+        if(!data.length){
+            alert('Nenhum usuário encontrado com o filtro informado!');
+            return;
+        }
         carregaGridResultado(data);
     }).fail(function() {
         alert('Ocorreu um erro no servidor, contate o administrador.');

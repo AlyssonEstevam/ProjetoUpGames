@@ -151,7 +151,7 @@ function excluirUsuario(){
       alert('Usuário deletado com sucesso.')
       abreTelaBuscarUsuario()
     }).fail(function() {
-      alert('Ocorreu um erro no servidor, contate o administrador: ')
+      alert('Ocorreu um erro no servidor, contate o administrador')
       document.getElementById("cnome").focus();
     });
   }
