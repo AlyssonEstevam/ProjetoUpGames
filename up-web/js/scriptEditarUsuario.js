@@ -169,6 +169,6 @@ function teclaPressionada(e, input){
   }else if(e.keyCode == 13 && input.id == 'csenha'){
     document.getElementById("cconfirmasenha").focus();
   }else if(e.keyCode == 13 && input.id == 'cconfirmasenha'){
-    realizaCadastro();
+    realizaEdicao();
   }
 }

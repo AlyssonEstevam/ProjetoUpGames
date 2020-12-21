@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>UPgames</title>
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="../imagens/logo16.ico" />
+        <link rel="stylesheet" type="text/css" href="../estilo/styleNovoJogo.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="../js/scriptNovoJogo.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="divLogo">
+                <img id="imgLogo" class="img-fluid" src="../imagens/logo.png">
+            </div>
+            <div class="divFormulario">
+                <input 
+                    type="text" 
+                    id="cnome" 
+                    placeholder="NOME" 
+                    onfocus="limpaPlaceHolder(this);" 
+                    onblur="adicionaPlaceHolder(this);" 
+                    onkeypress="teclaPressionada(event, this);"
+                >
+                <select id="comboGeneros">
+                    <option value="0">Genero</option>
+                </select>
+                <input 
+                    type="text" 
+                    id="cpreco" 
+                    placeholder="PRECO" 
+                    onfocus="limpaPlaceHolder(this);" 
+                    onblur="formataPreco(this);"
+                    onkeypress="teclaPressionada(event, this);"
+                >
+            </div>
+            <div class="divBotoes">
+                <div class="divBtnCadastra">
+                    <input 
+                        type="button" 
+                        id="btnCadastra" 
+                        value="CADASTRAR" 
+                        onclick="realizaCadastro();"
+                    >
+                    <input 
+                        type="button" 
+                        id="btnLimpar" 
+                        value="LIMPAR" 
+                        onclick="limparCampos();"
+                    >
+                </div>
+                <div class="divBtnVoltar">
+                    <input 
+                        type="button" 
+                        id="btnVoltar" 
+                        value="VOLTAR" 
+                        onclick="abreTelaBuscarJogo();"
+                    >
+                </div>
+            </div>
+        </div>
+    </body>
+    
+</html>

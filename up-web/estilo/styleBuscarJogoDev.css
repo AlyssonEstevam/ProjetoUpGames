@@ -1,0 +1,166 @@
+@font-face {
+    font-family: snes-font;
+    src: url(fontes/SnesItalic-1G9Be.ttf);
+}
+
+body{
+    margin: 0 10%;
+    background-color: #f35f40
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: 1fr 1fr 9fr 1fr;
+    width: 80vw;
+    height: 100vh;
+    grid-template-areas: "logo menus" "filtro filtro" "conteudo conteudo" "rodape rodape";
+    background-color: #1c1c1c;
+}
+
+.divLogo{
+    display: flex;
+    grid-area: logo;
+    align-content: center;
+    justify-content: center;
+    border-bottom: 5pt solid white;
+}
+
+#imgLogoMenu{
+    width: 150px;
+    height: 150px;
+}
+
+.divMenu{
+    display: flex;
+    grid-area: menus;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 5pt solid white;
+}
+
+.menu-item{
+    display: flex;
+    font-size: 30pt;
+    font-family: snes-font;
+    color: white;
+    border-left: 5pt solid white;
+}
+
+.menu-item:hover{
+    cursor: pointer;
+    color: #f35f40;
+}
+
+.ativo{
+    color: #f35f40;
+}
+
+.ativo:hover{
+    cursor: default;
+}
+
+.divFiltro{
+    display: flex;
+    grid-area: filtro;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 1%;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+#comboFiltros{
+    font-family: snes-font;
+    font-size: 25px;
+    width: 13%;
+    background-color: #f35f40;
+}
+
+#cfiltro{
+    font-family: snes-font;
+    font-size: 25px;
+    width: 45%;
+}
+
+::placeholder {
+    color: #000000;
+}
+
+#btnFiltrar{
+    display: flex;
+    align-items: center;
+    background-color: #f35f40;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+#btnFiltrar:hover{
+    background-color:white;
+    color: #f35f40;
+    cursor: pointer;
+}
+
+#iconBusca{
+    font-size: 30px;
+}
+
+.divContent{
+    display: flex;
+    grid-area: conteudo;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+table.gridResultado{
+    width: 90%;
+    font-family: snes-font;
+    color: white;
+}
+
+table.gridResultado thead td{
+    border: 1pt solid white;
+    font-size: 30px;
+    text-align: center;
+    background-color: #000000;
+}
+
+table.gridResultado tbody tr:hover{
+    background-color: #f35f40;
+    color: black;
+    cursor: pointer;
+}
+
+table.gridResultado tbody td{
+    font-size: 28px;
+    border-bottom: 1pt solid white;
+    
+}
+
+table.gridResultado tbody td:first-child{
+    text-align: center;
+}
+
+table.gridResultado tbody td:last-child{
+    text-align: center;
+}
+
+.divRodape{
+    display: flex;
+    flex-direction: column;
+    grid-area: rodape;
+    align-items: center;
+    justify-content: center;
+    border-top: 5pt solid white;
+}
+
+#imgLogoRodape{
+    width: 100px;
+    height: 100px;
+}
+
+#textoRodape{
+    font-size: 15pt;
+    font-family: snes-font;
+    color: white;
+}

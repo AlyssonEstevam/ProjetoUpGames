@@ -1,0 +1,90 @@
+body{
+    background-color: #f35f40;
+}
+
+@font-face {
+    font-family: snes-font;
+    src: url(fontes/SnesItalic-1G9Be.ttf);
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 3fr 2fr 3fr;
+    grid-template-rows: 1fr 2fr 2fr 2fr;
+    width: 98vw;
+    height: 85vh;
+    grid-template-areas: ". . ." ". logo ." ". formulario ." ". botoes .";
+    background-color: #f35f40;
+}
+
+.divLogo{
+    display: flex;
+    grid-area: logo;
+    align-content: center;
+    justify-content: center;
+    background-color: #1c1c1c;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.divFormulario{
+    display: flex;
+    flex-direction: column;
+    grid-area: formulario;
+    align-items: center;
+    background-color: #1c1c1c;
+}
+
+#cnome, #cpreco, #comboGeneros{
+    font-weight: bold;
+    font-family: snes-font;
+    font-size: 30px;
+    text-align: center;
+    width: 75%;
+    margin: 3%
+}
+
+#comboGeneros{
+    font-weight: bold;
+    font-family: snes-font;
+    font-size: 30px;
+    text-align: center;
+    width: 75%;
+    margin: 3%
+}
+
+::placeholder {
+    color: #000000;
+}
+
+.divBotoes{
+    display: flex;
+    flex-direction: column;
+    grid-area: botoes;
+    align-items: center;
+    background-color: #1c1c1c;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.divBtnEdita{
+    display: flex;
+    flex-direction: row;
+}
+
+#btnEdita, #btnLimpar, #btnVoltar{
+    font-family: snes-font;
+    font-size: 30px;
+    font-weight: bold;
+    width: 200px;
+    margin: 2%;
+    background-color:#f35f40;
+    color: black;
+    border: none;
+    border-radius: 10px;
+}
+
+#btnEdita:hover, #btnLimpar:hover, #btnVoltar:hover{
+    background-color:white;
+    color: #f35f40;
+}

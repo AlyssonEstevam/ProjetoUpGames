@@ -4,10 +4,10 @@
         <title>UPgames</title>
         <meta charset="UTF-8">
         <link rel="shortcut icon" href="../imagens/logo16.ico" />
-        <link rel="stylesheet" type="text/css" href="../estilo/styleBuscarUsuario.css">
+        <link rel="stylesheet" type="text/css" href="../estilo/styleBuscarJogoDev.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="../js/scriptBuscarUsuario.js"></script>
+        <script src="../js/scriptBuscarJogoDev.js"></script>
     </head>
     <body>
         <div class="container">
@@ -15,16 +15,14 @@
             <img id="imgLogoMenu" src="../imagens/logo.png">
           </div>
           <div class="divMenu">
-            <div class="menu-item ativo">BUSCAR USUARIOS</div>
-            <div class="menu-item" onclick="abreTelaBuscarJogo();">BUSCAR JOGOS</div>
+            <div class="menu-item ativo">BUSCAR JOGOS</div>
             <div class="menu-item" onclick="abreTelaLogin();">SAIR</div>
           </div>
           <div class="divFiltro">
             <select id="comboFiltros" >
                 <option value="0">Selecione...</option>
                 <option value="1">Nome</option>
-                <option value="2">Login</option>
-                <option value="3">Tipo de Usuario</option>
+                <option value="2">Genero</option>
             </select>
             <input 
                     type="text" 
@@ -37,8 +35,8 @@
             <div id="btnFiltrar" onclick="buscarPorFiltro();">
                 <i class="material-icons" id="iconBusca">search</i>
             </div>
-            <div id="btnFiltrar" onclick="abreTelaCadastrarUsuario();">
-              <i class="material-icons" id="iconBusca">person_add</i>
+            <div id="btnFiltrar" onclick="abreTelaCadastrarJogo();">
+              <i class="material-icons" id="iconBusca">note_add</i>
             </div>
           </div>
           <div class="divContent">
@@ -52,9 +50,9 @@
               <thead>
                 <tr>
                   <td>CODIGO</td>
-                  <td>TIPO DE USUARIO</td>
-                  <td>NOME COMPLETO</td>
-                  <td>LOGIN</td>
+                  <td>NOME</td>
+                  <td>GENERO</td>
+                  <td>PRECO</td>
                 </tr>
               </thead>
               <tbody id="bodyTabela">
