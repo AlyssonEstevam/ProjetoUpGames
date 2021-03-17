@@ -1,6 +1,7 @@
 .itens-menu{
     font-size: 15pt;
     display: flex;
+    cursor: pointer;
 }
 
 .imagens-carousel{

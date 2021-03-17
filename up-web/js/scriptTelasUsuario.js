@@ -41,3 +41,65 @@ function abreTelaCarteira(){
 function abreTelaCarrinho(){
     window.location.href = 'carrinho.html?Cod_SeqUsuario=' + usuarioLogado;
 }
+
+function adicionaCarrinhoHorizon(){
+    var resposta = confirm('Deseja adicionar o jogo Horizon: Zero Dawn ao carrinho?');
+
+    if(resposta == true){
+        model = {
+            Cod_Usuario: usuarioLogado
+        }
+
+        $.ajax({
+          method: "POST",
+          url: 'http://localhost:4000/adicionaHorizonCarrinho',
+          data: model,
+          dataType: "json",
+          crossDomain: true
+        }).done(function(){
+          alert('Jogo adicionado ao carrinho.')
+        }).fail(function() {
+          alert('Ocorreu um erro no servidor, contate o administrador.')
+        });
+    }
+}
+
+function adicionaCarrinhoFarCry(){
+    var resposta = confirm('Deseja adicionar o jogo Far Cry 5 ao carrinho?');
+
+    if(resposta == true){
+        model = {
+            Cod_Usuario: usuarioLogado
+        }
+
+        $.ajax({
+          method: "POST",
+          url: 'http://localhost:4000/adicionaFarCryCarrinho',
+          data: model,
+          dataType: "json",
+          crossDomain: true
+        }).done(function(){
+          alert('Jogo adicionado ao carrinho.')
+        }).fail(function() {
+          alert('Ocorreu um erro no servidor, contate o administrador.')
+        });
+    }
+}
+
+function limpaVendasUsuario(){
+    model = {
+        Cod_Usuario: usuarioLogado
+    }
+
+    $.ajax({
+        method: "POST",
+        url: 'http://localhost:4000/limpaVendasUsuario',
+        data: model,
+        dataType: "json",
+        crossDomain: true
+      }).done(function(){
+        alert('Tudo limpo!')
+      }).fail(function() {
+        alert('Ocorreu um erro no servidor, contate o administrador.')
+      });
+}

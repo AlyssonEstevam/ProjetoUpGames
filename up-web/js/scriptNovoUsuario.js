@@ -109,9 +109,46 @@ function realizaCadastro(){
       dataType: "json",
       crossDomain: true
     }).done(function(){
-      //COLOCAR AQUI POST PARA CADASTRAR UMA CARTEIRA DO USUÁRIO CASO SEJA CLIENTE
-      alert('Usuário cadastrado com sucesso!');
-      abreTelaBuscarUsuario();
+      if(codigoTipoUsuario == 3){
+        $.ajax({
+          method: "GET",
+          url: 'http://localhost:4000/getUsuarioByLogin/' + login,
+          crossDomain: true
+        }).done(function(data) {
+          modelCarteira = {
+            Cod_Usuario: data[0].Cod_SeqUsuario
+          }
+      
+          $.ajax({
+              method: "POST",
+              url: 'http://localhost:4000/postCarteira',
+              data: modelCarteira,
+              dataType: "json",
+              crossDomain: true
+            }).done(function(){
+              $.ajax({
+                method: "POST",
+                url: 'http://localhost:4000/postControleVendaUsuario',
+                data: modelCarteira,
+                dataType: "json",
+                crossDomain: true
+              }).done(function(){
+                alert('Usuário cadastrado com sucesso!');
+                abreTelaBuscarUsuario();
+              }).fail(function() {
+                alert('Ocorreu um erro no servidor, contate o administrador.')
+              });
+            }).fail(function() {
+              alert('Ocorreu um erro no servidor, contate o administrador.')
+            });
+        }).fail(function() {
+          alert('Ocorreu um erro no servidor, contate o administrador: ');
+          document.getElementById("cnome").focus();
+        });
+      }else{
+        alert('Usuário cadastrado com sucesso!');
+        abreTelaBuscarUsuario();
+      }
     }).fail(function() {
       alert('Ocorreu um erro no servidor, contate o administrador: ');
       document.getElementById("cnome").focus();

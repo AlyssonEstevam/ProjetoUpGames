@@ -9,6 +9,7 @@ html,body{
 .itens-menu{
     font-size: 15pt;
     display: flex;
+    cursor: pointer;
 }
 
 section#formAdicionaSaldo{

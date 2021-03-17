@@ -87,6 +87,8 @@ function adicionaSaldo(){
         return;
     }
 
+    valor = valor.replace('.', '')
+
     let model = {
         Cod_Usuario: usuarioLogado,
         Ind_Operacao: 'C',

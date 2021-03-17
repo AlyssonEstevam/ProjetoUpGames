@@ -43,3 +43,15 @@ CREATE TABLE Up_Carteira(
 	CONSTRAINT Cod_Usuario_FK FOREIGN KEY (Cod_Usuario)
 	REFERENCES Up_Usuario(Cod_SeqUsuario)
 );
+
+CREATE TABLE Up_ControleVenda(
+	Cod_SeqControleVenda int AUTO_INCREMENT NOT NULL,
+	Cod_Usuario int NOT NULL,
+	Ind_HorizonCarrinho int NOT NULL,
+	Ind_FarCryCarrinho int NOT NULL,
+	Ind_HorizonConfirmaVenda int NOT NULL,
+	Ind_FarCryConfirmaVenda int NOT NULL,
+	PRIMARY KEY (Cod_SeqControleVenda),
+	CONSTRAINT Cod_Usuario_FK1 FOREIGN KEY (Cod_Usuario)
+	REFERENCES Up_Usuario(Cod_SeqUsuario)
+);

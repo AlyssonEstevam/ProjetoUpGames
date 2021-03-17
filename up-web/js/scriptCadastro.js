@@ -60,11 +60,44 @@ function realizaCadastro(){
       dataType: "json",
       crossDomain: true
     }).done(function(){
-      alert('Usuário inserido com sucesso, por favor realize o login.')
-      abreTelaLogin();
+        $.ajax({
+          method: "GET",
+          url: 'http://localhost:4000/getUsuarioByLogin/' + login,
+          crossDomain: true
+        }).done(function(data) {
+          modelCarteira = {
+            Cod_Usuario: data[0].Cod_SeqUsuario
+          }
+      
+          $.ajax({
+              method: "POST",
+              url: 'http://localhost:4000/postCarteira',
+              data: modelCarteira,
+              dataType: "json",
+              crossDomain: true
+            }).done(function(){
+              $.ajax({
+                method: "POST",
+                url: 'http://localhost:4000/postControleVendaUsuario',
+                data: modelCarteira,
+                dataType: "json",
+                crossDomain: true
+              }).done(function(){
+                alert('Usuário cadastrado com sucesso, por favor realize o Login!');
+                abreTelaLogin();
+              }).fail(function() {
+                alert('Ocorreu um erro no servidor, contate o administrador.')
+              });
+            }).fail(function() {
+              alert('Ocorreu um erro no servidor, contate o administrador.')
+            });
+        }).fail(function() {
+          alert('Ocorreu um erro no servidor, contate o administrador: ');
+          document.getElementById("cnome").focus();
+        });
     }).fail(function() {
-        alert('Ocorreu um erro no servidor, contate o administrador.')
-        document.getElementById("cnome").focus();
+      alert('Ocorreu um erro no servidor, contate o administrador: ');
+      document.getElementById("cnome").focus();
     });
   }).fail(function(data) {
     if(!data.length)

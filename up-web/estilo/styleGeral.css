@@ -1,5 +1,4 @@
 body{
-    /*background-color: #1b1b1bfd;*/
     background-color: white;
 }
 
@@ -10,10 +9,8 @@ html,body{
 .itens-menu{
     font-size: 15pt;
     display: flex;
+    cursor: pointer;
 }
-
-/* começa cima */
-
 
 /*começa rodape*/
 
@@ -80,18 +77,6 @@ div#caixa input{
     font-size: 15pt;
 }
 
-/*div#caixa input:hover{
-    background: #03e9f4;
-    color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #03e9f4,
-            0 0 25px #03e9f4,
-            0 0 50px #03e9f4,
-            0 0 100px #03e9f4;
-    animation: btn-anim3 1s linear infinite;
-}
-*/
-
 div#caixa iframe{
     position: absolute;
     top: 250px;
@@ -102,7 +87,6 @@ div#caixa h1{
     text-align: center;
     font-size: 35pt;
     color: white;
-
 }
 
 footer#rodape2{
@@ -150,7 +134,7 @@ section#aventura img:hover{
 }
 
 div.preco1{
-    width: 100px;
+    width: 150px;
     height: 50px;
     background-color: #1b1b1bbe;
     float: left;
@@ -163,7 +147,7 @@ div.preco1{
 }
 
 div.preco2{
-    width: 100px;
+    width: 150px;
     height: 50px;
     background-color: #1b1b1bbe;
     float: left;
@@ -176,7 +160,7 @@ div.preco2{
 }
 
 div.preco3{
-    width: 100px;
+    width: 150px;
     height: 50px;
     background-color: #1b1b1bbe;
     float: left;
@@ -189,7 +173,7 @@ div.preco3{
 }
 
 div.preco4{
-    width: 100px;
+    width: 150px;
     height: 50px;
     background-color: #1b1b1bbe;
     float: left;

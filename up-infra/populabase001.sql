@@ -38,4 +38,9 @@ INSERT INTO Up_Carteira (Vlr_Saldo, Cod_Usuario)
 		(0.0, 5),
 		(0.0, 6),
 		(0.0, 7);
-			
+
+INSERT INTO Up_ControleVenda (Cod_Usuario, Ind_HorizonCarrinho, Ind_FarCryCarrinho, Ind_HorizonConfirmaVenda, Ind_FarCryConfirmaVenda)
+	VALUES
+		(5, 0, 0, 0, 0),
+		(6, 0, 0, 0, 0),
+		(7, 0, 0, 0, 0)
