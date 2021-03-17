@@ -33,12 +33,50 @@
             </ol>
         </nav>
            
-        <section id="saldo">
-            <h1>SALDO: </h1>
+        <section>
+            <h1 id="saldo">SALDO: </h1>
+        </section>
+        <section id="formAdicionaSaldo">
+            <input 
+                type="text" 
+                id="cvalor" 
+                placeholder="R$ 0,00" 
+                onfocus="limpaPlaceHolder(this);" 
+                onblur="formataValor(this);"
+            >
+            <h2>Forma de Pagamento:</h2>
+            <input
+                type="radio"
+                id="boleto"
+                name="rbformapagamento"
+                value="boleto"
+            >
+            <label for="boleto">Boleto</label>
+            <input
+                type="radio"
+                id="cartao"
+                name="rbformapagamento"
+                value="cartao"
+            >
+            <label for="cartao">Cartão de Crédito</label>
+            <input
+                type="radio"
+                id="pix"
+                name="rbformapagamento"
+                value="pix"
+            >
+            <label for="pix">Pix</label>
+            <br>
+            <input 
+                type="button" 
+                id="btnConfirma" 
+                value="ADICIONAR" 
+                onclick="adicionaSaldo();"
+            >
         </section>   
             
-    <footer id="rodape3">
-        <div class="rodapefinal3">
+    <footer id="rodape">
+        <div class="rodapefinal">
             <img src="../imagens/up.png">
             <h5>All Rights Reserved - UP Games</h5>
         </div>

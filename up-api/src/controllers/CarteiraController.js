@@ -13,7 +13,7 @@ class CarteiraController{
     getCarteiraFiltro(req, res){
         const Nom_Filtro = req.query.Nom_Filtro.substring(0,100)
 
-        let filtro = 'WHERE Cod_Usuario=' + Nom_Filtro
+        let filtro = ' WHERE Cod_Usuario=' + Nom_Filtro
 
         execSQLQuery('SELECT * FROM Up_Carteira' + filtro, res)
     }
