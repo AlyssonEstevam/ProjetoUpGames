@@ -13,6 +13,9 @@ window.onload = function(){
         var textoSaldo = document.getElementById('saldo');
 
         textoSaldo.innerHTML = 'SALDO: R$ ' + data[0].Vlr_Saldo.toFixed(2).replace('.', ',');
+
+        var rbBoleto = document.getElementById('boleto');
+        rbBoleto.checked = true;
       }).fail(function(data) {
         if(!data.length)
           alert('Ocorreu um erro no servidor, contate o administrador.');
