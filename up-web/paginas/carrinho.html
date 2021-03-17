@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>UPgames</title>
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="../imagens/logo16.ico" />
+        <link rel="stylesheet" type="text/css" href="../estilo/styleCarrinho.css">
+        <link rel="stylesheet" type="text/css" href="../estilo/bootstrap.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="../js/scriptTelasUsuario.js"></script>
+
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-sm cor-menu navbar-dark">
+          <img id="logo" src="../imagens/logo.png" width="150" height="150">
+          <ol class="navbar-nav itens-menu container">
+            <li class="nav-item" >
+              <a class="nav-link " onclick="abreTelaHome()">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" onclick="abreTelaLoja()">LOJA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" onclick="abreTelaBiblioteca()">BIBLIOTECA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" onclick="abreTelaCarteira()">CARTEIRA</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" onclick="abreTelaCarrinho()">
+                    <style>
+                        .img_carrinho{
+                            width: 50px;
+                            height: 50px;
+                            cursor: pointer;
+                        }
+                    </style>
+                    <img class="img_carrinho" src="../imagens/carrinho.png">
+                </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">SAIR</a>
+            </li>
+          </ol>
+        </nav>
+
+        <section id="lista_carrinho">
+            <h1>Carrinho</h1>
+                <img src="../imagens/zero.jpg"/> 
+                <img src="../imagens/far.jpg"/>
+        </section>   
+
+        <div class="container">
+            <footer id="rodape">
+                <div class="rodapefinal">
+                    <img src="../imagens/up.png">
+                    <h5>All Rights Reserved - UP Games</h5>
+                </div>
+          </footer>
+          </div>
+    
+</body>
+
+</html>

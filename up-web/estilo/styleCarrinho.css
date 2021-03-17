@@ -1,0 +1,41 @@
+.itens-menu{
+    font-size: 15pt;
+    display: flex;
+}
+
+section#lista_carrinho{
+    background-color: #1b1b1bfd;
+    border-bottom: 1.5px solid white;
+}
+
+section#lista_carrinho h1{
+    text-align: center;
+    font-size: 30pt;
+    color: white;
+    border-bottom: 2px solid white;
+}
+
+section#lista_carrinho img{
+    position: relative;
+    width: 400px;
+    height: 500px;
+    padding: 5px;
+    left: 110px;
+}
+section#lista_carrinho img:hover{
+    transform:scale(1.05);
+    transition: all .6s cubic-bezier(1,1,1,1);
+    cursor: pointer;
+}
+
+footer#rodape div.rodapefinal{
+    position: absolute;
+    margin-top: 3%;
+    color: white;
+    left: 43%;
+    font-family: times, sans-serif;
+}
+
+footer#rodape div.rodapefinal img{
+    margin-left: 41%;
+}
