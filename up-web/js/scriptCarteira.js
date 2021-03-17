@@ -7,11 +7,12 @@ window.onload = function(){
 
     $.ajax({
         method: "GET",
-        url: 'http://localhost:4000/getCarteira/' + login,
+        url: 'http://localhost:4000/getCarteiraFiltro/?Nom_Filtro=' + usuarioLogado,
         crossDomain: true
       }).done(function(data) {
-        alert();
-    
+        var textoSaldo = document.getElementById('saldo');
+
+        textoSaldo.innerHTML = 'SALDO: R$ ' + data[0].Vlr_Saldo.toFixed(2).replace('.', ',');
       }).fail(function(data) {
         if(!data.length)
           alert('Ocorreu um erro no servidor, contate o administrador.');
@@ -48,4 +49,54 @@ function abreTelaBiblioteca(){
 
 function abreTelaCarteira(){
     window.location.href = 'carteira.html?Cod_SeqUsuario=' + usuarioLogado;
+}
+
+function limpaPlaceHolder(input){
+    $(input).attr("placeholder", "");
+}
+  
+function adicionaPlaceHolder(input){
+    $(input).attr("placeholder", "R$ 0,00");
+}
+
+function formataValor(input){
+    let valor = '';
+
+    if($('#cvalor').val()){
+        valor = parseFloat($('#cvalor').val().replace(',', '.')).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2});
+        $('#cvalor').val('R$ ' + valor);
+    }
+
+    if(input)
+        adicionaPlaceHolder(input);
+}
+
+function adicionaSaldo(){
+    let valor = $('#cvalor').val()
+
+    if(!valor){
+        alert('Informe o valor para prosseguir!');
+        document.getElementById("cvalor").focus();
+        return;
+    }
+
+    let model = {
+        Cod_Usuario: usuarioLogado,
+        Ind_Operacao: 'C',
+        Vlr_Valor: valor.substring(3, valor.length).replace(',', '.')
+    }
+
+    $.ajax({
+        method: "PUT",
+        url: 'http://localhost:4000/putCarteira',
+        data: model,
+        dataType: "json",
+        crossDomain: true
+    }).done(function(){
+        alert('Obrigado por adicionar o saldo à sua carteira!');
+        abreTelaCarteira();
+    }).fail(function() {
+        alert('Ocorreu um erro no servidor, contate o administrador: ')
+        document.getElementById("cvalor").focus();
+    });
 }

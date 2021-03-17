@@ -109,6 +109,7 @@ function realizaCadastro(){
       dataType: "json",
       crossDomain: true
     }).done(function(){
+      //COLOCAR AQUI POST PARA CADASTRAR UMA CARTEIRA DO USUÁRIO CASO SEJA CLIENTE
       alert('Usuário cadastrado com sucesso!');
       abreTelaBuscarUsuario();
     }).fail(function() {
