@@ -1,0 +1,434 @@
+body{
+    /*background-color: #1b1b1bfd;*/
+    background-color: white;
+}
+
+html,body{
+    margin:0;
+}
+
+.itens-menu{
+    font-size: 15pt;
+    display: flex;
+}
+
+/* começa cima */
+
+
+/*começa rodape*/
+
+footer#rodape{
+    clear: both;
+    text-align: center;
+    height: 300px;
+    background-color: #1b1b1bfd;
+}
+
+footer#rodape div.rodapefinal{
+    position: absolute;
+    top: 1800px;
+    color: white;
+    left: 46%;
+    font-family: times, sans-serif;
+}
+
+/* começa biblioteca*/
+
+section#jogos{
+    background-color: #1b1b1bfd;
+}
+
+section#jogos div.bib h1{
+    color: white;
+    font-size: 25pt;
+    border-bottom: 2px solid white;
+    margin-top:12px;
+    text-align: center;
+}
+
+section#jogos img{
+    position: relative;
+    width: 400px;
+    height: 500px;
+    padding: 5px;
+    left: 110px;
+}
+
+section#jogos img:hover{
+    transform:scale(1.05);
+    transition: all .6s cubic-bezier(1,1,1,1);
+    cursor: pointer;
+}
+
+div#caixa{
+    width: 50%;
+    height: 400px;
+    background-color: #1b1b1bfd;
+    float: left;
+    position: relative;
+    margin-top: -950px;
+    left: 25%;
+    display: none;
+    border: 2px solid white;
+    border-radius: 20px 20px;
+}
+
+div#caixa input{
+    position: absolute;
+    top: 350px;
+    left: 440px;
+    font-size: 15pt;
+}
+
+div#caixa iframe{
+    position: absolute;
+    top: 250px;
+    left: 438px;
+}
+
+div#caixa h1{
+    text-align: center;
+    font-size: 35pt;
+    color: white;
+
+}
+
+footer#rodape2{
+    clear: both;
+    text-align: center;
+    height: 300px;
+    background-color: #1b1b1bfd;
+    border-top: 2px solid white;
+}
+
+footer#rodape2 div.rodapefinal2{
+    position: absolute;
+    top: 1400px;
+    color: white;
+    left: 46%;
+    font-family: times, sans-serif;
+}
+
+/*começa loja*/
+
+section#aventura{
+    background-color: #1b1b1bfd;
+    border-bottom: 1.5px solid white;
+}
+
+section#aventura h1{
+    text-align: center;
+    font-size: 30pt;
+    color: white;
+    border-bottom: 2px solid white;
+}
+
+section#aventura img{
+    position: relative;
+    width: 400px;
+    height: 500px;
+    padding: 5px;
+    left: 110px;
+}
+
+section#aventura img:hover{
+    transform:scale(1.05);
+    transition: all .6s cubic-bezier(1,1,1,1);
+    cursor: pointer;
+}
+
+div.preco1{
+    width: 100px;
+    height: 50px;
+    background-color: #1b1b1bbe;
+    float: left;
+    position: relative;
+    left: 120px;
+    margin-top: -80px;
+    display: block;
+    border: 2px solid white;
+    border-radius: 20px 20px;
+}
+
+div.preco2{
+    width: 100px;
+    height: 50px;
+    background-color: #1b1b1bbe;
+    float: left;
+    position: relative;
+    left: 535px;
+    margin-top: -80px;
+    display: block;
+    border: 2px solid white;
+    border-radius: 20px 20px;
+}
+
+div.preco3{
+    width: 100px;
+    height: 50px;
+    background-color: #1b1b1bbe;
+    float: left;
+    position: relative;
+    left: 950px;
+    margin-top: -80px;
+    display: block;
+    border: 2px solid white;
+    border-radius: 20px 20px;
+}
+
+div.preco4{
+    width: 100px;
+    height: 50px;
+    background-color: #1b1b1bbe;
+    float: left;
+    position: relative;
+    left: 1365px;
+    margin-top: -80px;
+    display: block;
+    border: 2px solid white;
+    border-radius: 20px 20px;
+}
+
+
+div.preco1 h1{
+    color: white;
+    font-size: 20pt;
+    text-align: center;
+}
+
+div.preco2 h1{
+    color: white;
+    font-size: 20pt;
+    text-align: center;
+}
+
+div.preco3 h1{
+    color: white;
+    font-size: 20pt;
+    text-align: center;
+}
+
+div.preco4 h1{
+    color: white;
+    font-size: 20pt;
+    text-align: center;
+}
+
+footer#rodape3{
+    clear: both;
+    text-align: center;
+    height: 300px;
+    background-color:#1b1b1bfd;
+
+}
+
+footer#rodape3 div.rodapefinal3{
+    position: absolute;
+    top: 2700px;
+    color: white;
+    left: 46%;
+    font-family: times, sans-serif;
+}
+
+/*começa perfil*/
+
+section#perfil{
+    background-color: #1b1b1bfd;
+    margin-top: 12px;
+    height: 1000px;
+}
+
+section#perfil div.foto img{
+    margin-top: 10px;
+    margin-left: 300px;
+}
+
+div.info h1{
+    font-size: 25pt;
+    color:white;
+    margin-left: 600px;
+    float: left;
+    position: relative;
+    top: -990px;
+}
+
+div.info h2{
+    font-size: 15pt;
+    color:white;
+    float: left;
+    position: relative;
+    top: -910px;
+    margin-left: -250px;
+}
+
+div.info2 h1{
+    font-size: 25pt;
+    color:white;
+    margin-left: 400px;
+    float: left;
+    position: relative;
+    top: -990px;
+}
+
+div.info2 img{
+    width: 400px;
+    height: 500px;
+    position: relative;
+    top: -900px;
+    margin-left: -300px;
+}
+
+div.borda{
+    width: 75%;
+    height: 1600px;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    margin-top: -1780px;
+    margin-left: 230px;
+}
+
+div.info3 h1{
+    font-size: 25pt;
+    color:white;
+    margin-left: 300px;
+    float: left;
+    position: relative;
+    top: -1200px;
+    display: block;
+}
+
+div.info3 h2{
+    font-size: 25pt;
+    color:white;
+    margin-left: -150px;
+    float: left;
+    position: relative;
+    top: -1150px;
+    display: block;
+}
+
+div.info3 h3{
+    font-size: 25pt;
+    color:white;
+    margin-left: -188px;
+    float: left;
+    position: relative;
+    top: -1100px;
+    display: block;
+}
+
+
+div.info3 h4{
+    font-size: 25pt;
+    color:white;
+    margin-left: -188px;
+    float: left;
+    position: relative;
+    top: -1050px;
+    display: block;
+}
+
+div.info4 h1{
+    font-size: 25pt;
+    color:white;
+    margin-left: -188px;
+    float: left;
+    position: relative;
+    top: -850px;
+    display: block;
+}
+
+div.info4 h2{
+    font-size: 20pt;
+    color:white;
+    margin-left: -188px;
+    float: left;
+    position: relative;
+    top: -770px;
+    display: block;
+}
+
+div.info5 h1{
+    font-size: 25pt;
+    color:white;
+    margin-left: -460px;
+    float: left;
+    position: relative;
+    top: -590px;
+    display: block;
+}
+
+div.info5 img{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    top: -480px;
+    margin-left: -470px;
+}
+
+div.info5 h2{
+    font-size: 20pt;
+    color:white;
+    margin-left: -350px;
+    float: left;
+    position: relative;
+    top: -500px;
+    display: block;
+}
+
+div.info5 h3{
+    font-size: 15pt;
+    color:white;
+    margin-left: -350px;
+    float: left;
+    position: relative;
+    top: -450px;
+    display: block;
+}
+
+div.info6 img{
+    width: 100px;
+    height: 100px;
+    left: 300px;
+    top: -400px;
+    position: relative;
+}
+
+div.info6 h2{
+    font-size: 20pt;
+    color:white;
+    display: block;
+    margin-left: 410px;
+    top: -520px;
+    position: relative;
+}
+
+div.info6 h3{
+    font-size: 15pt;
+    color:white;
+    margin-left: 410px;
+    top: -520px;
+    display: block;
+    position: relative;
+}
+
+
+footer#rodape4{
+    clear: both;
+    text-align: center;
+    height: 300px;
+    background-color:#1b1b1bfd;
+}
+
+footer#rodape4 div.rodapefinal4{
+    position: absolute;
+    top: 1850px;
+    color: white;
+    left: 46%;
+    font-family: times, sans-serif;
+}
+
+body.color{
+    background-color:#1b1b1b ; 
+}

@@ -37,11 +37,3 @@ function abreTelaBiblioteca(){
 function abreTelaCarteira(){
     window.location.href = 'carteira.html?Cod_SeqUsuario=' + usuarioLogado;
 }
-
-function exibeCaixa(){
-    document.getElementById('caixa').style.display = 'block';
-}
-
-function fechaCaixa(){
-    document.getElementById('caixa').style.display = 'none';
-}

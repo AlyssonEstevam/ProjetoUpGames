@@ -3,6 +3,7 @@ const UsuarioController = require('../controllers/UsuarioController')
 const TipoUsuarioController = require('../controllers/TipoUsuarioController')
 const JogoController = require('../controllers/JogoController')
 const GeneroController = require('../controllers/GeneroController')
+const CarteiraController = require('../controllers/CarteiraController')
 const router = express.Router()
 
 //Rotas do UsuarioController
@@ -28,5 +29,11 @@ router.get('/getGenero/:Cod_SeqGenero?', GeneroController.getGenero)
 router.delete('/deleteGenero/:Cod_SeqGenero', GeneroController.deleteGenero)
 router.post('/postGenero', GeneroController.postGenero)
 router.put('/putGenero', GeneroController.putGenero)
+
+//Rotas do CarteiraController
+router.get('/getCarteira/:Cod_SeqCarteira?', CarteiraController.getCarteira)
+router.get('/getCarteiraFiltro/', CarteiraController.getCarteiraFiltro)
+router.post('/postCarteira', CarteiraController.postCarteira)
+router.put('/putCarteira', CarteiraController.putCarteira)
 
 module.exports = router

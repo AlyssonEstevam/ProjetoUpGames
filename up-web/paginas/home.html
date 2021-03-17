@@ -9,19 +9,23 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="../js/scriptTelasUsuario.js"></script>
     </head>
     <body>
         <nav class="navbar navbar-expand-sm cor-menu navbar-dark">
           <img id="logo" src="../imagens/logo.png" width="150" height="150">
           <ol class="navbar-nav itens-menu container">
             <li class="nav-item active" >
-              <a class="nav-link " href="home.html">HOME</a>
+              <a class="nav-link " onclick="abreTelaHome()">HOME</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="loja.html" >LOJA</a>
+              <a class="nav-link" onclick="abreTelaLoja()">LOJA</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="biblioteca.html">BIBLIOTECA</a>
+              <a class="nav-link" onclick="abreTelaBiblioteca()">BIBLIOTECA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" onclick="abreTelaCarteira()">CARTEIRA</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="../index.html">SAIR</a>
@@ -91,6 +95,5 @@
       </div>
 
 </body>
-<script src="../js/script.js"></script>
 
 </html>

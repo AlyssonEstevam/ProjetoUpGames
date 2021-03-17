@@ -38,7 +38,7 @@ function realizaLogin(){
       }else if(data[0].Cod_TipoUsuario == 2){
         window.location.href = 'paginas/homeDesenvolvedor.html';
       }else if(data[0].Cod_TipoUsuario == 3){
-        window.location.href = 'paginas/home.html';
+        window.location.href = 'paginas/home.html?Cod_SeqUsuario=' + data[0].Cod_SeqUsuario;
       }
     }else{
       alert('Combinação de usuário e senha incorreta!');

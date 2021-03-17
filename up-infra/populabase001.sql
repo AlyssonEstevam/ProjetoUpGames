@@ -1,8 +1,8 @@
 INSERT INTO Up_TipoUsuario (Nom_TipoUsuario)
 	VALUES 
-	('Administrador'),
-	('Desenvolvedor'),
-	('Cliente');
+		('Administrador'),
+		('Desenvolvedor'),
+		('Cliente');
 
 INSERT INTO Up_Usuario (Nom_Nome, Nom_Login, Nom_Senha, Cod_TipoUsuario)
 	VALUES
@@ -32,4 +32,10 @@ INSERT INTO Up_Jogo (Nom_Nome, Cod_Genero, Vlr_Preco)
 		('Minecraft', '5', '49.90'),
 		('Monopoly', '3', '49.90'),
 		('Hitman', '2', '49.90');
+		
+INSERT INTO Up_Carteira (Vlr_Saldo, Cod_Usuario)
+	VALUES
+		(0.0, 5),
+		(0.0, 6),
+		(0.0, 7);
 			

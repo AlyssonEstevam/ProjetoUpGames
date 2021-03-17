@@ -34,3 +34,12 @@ CREATE TABLE Up_Jogo(
 	CONSTRAINT Cod_Genero_FK FOREIGN KEY (Cod_Genero) 
 	REFERENCES Up_Genero(Cod_SeqGenero)
 );
+
+CREATE TABLE Up_Carteira(
+	Cod_SeqCarteira int AUTO_INCREMENT NOT NULL,
+	Vlr_Saldo float NOT NULL,
+	Cod_Usuario int NOT NULL,
+	PRIMARY KEY (Cod_SeqCarteira),
+	CONSTRAINT Cod_Usuario_FK FOREIGN KEY (Cod_Usuario)
+	REFERENCES Up_Usuario(Cod_SeqUsuario)
+);

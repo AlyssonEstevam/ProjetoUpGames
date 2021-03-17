@@ -4,6 +4,18 @@ window.onload = function(){
     var data = pegaParametrosUrl();
 
     usuarioLogado = data.Cod_SeqUsuario;
+
+    $.ajax({
+        method: "GET",
+        url: 'http://localhost:4000/getCarteira/' + login,
+        crossDomain: true
+      }).done(function(data) {
+        alert();
+    
+      }).fail(function(data) {
+        if(!data.length)
+          alert('Ocorreu um erro no servidor, contate o administrador.');
+      });
 }
 
 function pegaParametrosUrl(){
@@ -36,12 +48,4 @@ function abreTelaBiblioteca(){
 
 function abreTelaCarteira(){
     window.location.href = 'carteira.html?Cod_SeqUsuario=' + usuarioLogado;
-}
-
-function exibeCaixa(){
-    document.getElementById('caixa').style.display = 'block';
-}
-
-function fechaCaixa(){
-    document.getElementById('caixa').style.display = 'none';
 }
