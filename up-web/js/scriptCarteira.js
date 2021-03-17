@@ -51,6 +51,10 @@ function abreTelaCarteira(){
     window.location.href = 'carteira.html?Cod_SeqUsuario=' + usuarioLogado;
 }
 
+function abreTelaCarrinho(){
+    window.location.href = 'carrinho.html?Cod_SeqUsuario=' + usuarioLogado;
+}
+
 function limpaPlaceHolder(input){
     $(input).attr("placeholder", "");
 }
